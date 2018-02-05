@@ -1,8 +1,8 @@
 import React from 'react';
-import '../../scss/App.css';
+import '../scss/App.css';
 
-import MedCustomNavbar from '../components/MedCustomNavbar';
-import HomePage from './Homepage';
+import MedCustomNavbar from './components/MedCustomNavbar';
+import HomePage from './pages/Homepage';
 
 
 class App extends React.Component {
