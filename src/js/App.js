@@ -11,14 +11,13 @@ import DoctorPage from './pages/DoctorPage';
 class App extends Component {
 	render() {   
 		return (
-			<Switch>
 				<div className="App">
 					<header>
 						<MedCustomNavbar />
 					</header>
 
-					<Route exact path='/' component={HomePage} />
-					<Route exact path='/patient' component={PatientPage} />
+					{/*<Route exact path='/' component={HomePage} />*/}
+					{/*<Route exact path='/patient' component={PatientPage} />*/}
 					{/*<Route path='/pharmacist' component={PharmacistPage} />*/}
 					{/*<Route path='/doctor' component={DoctorPage} />*/}
 
@@ -26,7 +25,7 @@ class App extends Component {
 						Made By Min hoe ;) and Tryhard Bish
 					</footer>
 				</div>
-			</Switch>
+			
 		);
 	}
 }
