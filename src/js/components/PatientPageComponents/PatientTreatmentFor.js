@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import DiseaseDropdown from './DiseaseDropdown';
 
-export default class PatientTreatmentFor extends React.Component {
+export default class PatientTreatmentFor extends Component {
 	render() {
 		return (
 			<div className="container">

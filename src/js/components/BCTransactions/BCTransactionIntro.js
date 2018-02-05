@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import McLogo from '../../images/mclight-logo.png';
 
-export default class BCTransactionIntro extends React.Component {
+export default class BCTransactionIntro extends Component {
 	render() {
 		return (
 			<div className="container">

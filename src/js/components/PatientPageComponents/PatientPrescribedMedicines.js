@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import PatientPrescribedMedicineList from './PatientPrescribedMedicineList';
 
 
-export default class PatientPrescribedMedicines extends React.Component {
+export default class PatientPrescribedMedicines extends Component {
 	render() {
 		return (
 			<div className="container">

@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import RecentActivity from './RecentActivity';
 
-export default class PatientRecentActivityList extends React.Component {
+export default class PatientRecentActivityList extends Component {
 
 	constructor() {
 		super();

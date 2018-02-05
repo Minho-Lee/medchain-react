@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PrescribedMedicine from './PrescribedMedicine';
 
-export default class PatientPrescribedMedicineList extends React.Component {
+export default class PatientPrescribedMedicineList extends Component {
 
 	constructor() {
 		super();

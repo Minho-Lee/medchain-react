@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import PatientRecentActivityList from './PatientRecentActivityList';
 
-export default class PatientRecentActivity extends React.Component {
+export default class PatientRecentActivity extends Component {
 	render() {
 		return (
 			<div className="container">

@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import RandomGuyImage from '../../../images/square-sample-face.jpg';
 
-export default class PatientName extends React.Component {
+export default class PatientName extends Component {
 	constructor() {
 		super();
 
