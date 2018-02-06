@@ -31,4 +31,4 @@ const store = createStore(
 
 // export const history = syncHistoryWithStore(browserHistory, store);
 
-export default store;
+export { store, history };

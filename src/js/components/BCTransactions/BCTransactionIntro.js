@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import McLogo from '../../images/mclight-logo.png';
+import McLogo from '../../../images/mclight-logo.png';
 
 export default class BCTransactionIntro extends Component {
 	render() {

@@ -8,7 +8,7 @@ import PatientRecentActivity from '../components/PatientPageComponents/PatientRe
 
 import { Button } from 'reactstrap';
 
-export default class PatientPage extends Component {
+class PatientPage extends Component {
 	render() {
 		return (
 			<div className="container">
@@ -22,3 +22,5 @@ export default class PatientPage extends Component {
 		);
 	}
 }
+
+export { PatientPage };

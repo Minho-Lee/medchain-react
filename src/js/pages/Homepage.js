@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import LoginSection from '../components/HomePageComponents/LoginSection';
 import WelcomeSection from '../components/HomePageComponents/WelcomeSection';
 
-export default class Homepage extends Component {
+class HomePage extends Component {
 	render() {
 		return (
 			<div className="container">
@@ -13,3 +13,5 @@ export default class Homepage extends Component {
 		);
 	}
 }
+
+export { HomePage };
