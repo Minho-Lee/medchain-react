@@ -22,10 +22,8 @@ const defaultState = {
 };
 
 const store = createStore(
-	combineReducers({
-		...MasterReducer,
-	}),
-	defaultState,
+	MasterReducer,
+	{},
 	applyMiddleware(middleware)
 )
 

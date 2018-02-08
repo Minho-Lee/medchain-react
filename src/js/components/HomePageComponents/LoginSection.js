@@ -12,19 +12,19 @@ import {
 
 class LoginSection extends Component {
 	state = {
-		id: '',
+		userid: '',
 		password: ''
 	};
 
 	handleFormSubmit = (event) => {
 		// console.log(this.state.id + ' / ' + this.state.password);
 		this.props.onFormSubmit(this.state);
-		this.setState({ id: '', password: '' });
+		this.setState({ userid: '', password: '' });
 		event.preventDefault();
 	}
 
 	handleUseridChange = (event) => {
-		this.setState({ id : event.target.value });
+		this.setState({ userid : event.target.value });
 	}
 
 	handlePasswordChange = (event) => {

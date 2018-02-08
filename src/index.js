@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { ConnectedRouter, push } from 'react-router-redux';
+import { ConnectedRouter } from 'react-router-redux';
 import { Route } from 'react-router';
 import { Provider } from 'react-redux';
 
@@ -10,11 +10,13 @@ import './scss/index.css';
 import 'bootstrap/dist/css/bootstrap.css';
 // import App from './js/App';
 import {
-	HomePage,
+	// HomePage,
 	DoctorPage,
 	PatientPage,
 	PharmacistPage
 } from './js/pages';
+
+import HomePage from './js/pages/HomePage';
 import MedCustomNavbar from './js/components/MedCustomNavbar';
 
 import registerServiceWorker from './js/serviceworkers/registerServiceWorker';

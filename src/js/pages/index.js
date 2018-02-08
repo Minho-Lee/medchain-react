@@ -5,7 +5,7 @@
 export * from './PatientPage';
 export * from './PharmacistPage';
 export * from './DoctorPage';
-export * from './HomePage';
+// export * from './HomePage';
 export * from './BCTransactionPage';
 
 // Above statements import/export those modules which means each component no longer can 'export default'

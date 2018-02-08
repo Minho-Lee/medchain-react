@@ -1,6 +1,14 @@
 function addPrescribedMedicineReducer(state = [], action) {
-	console.log(state, action);
-	return state;
+	switch(action.type) {
+		case 'ADD_MEDICINE': {
+			console.log('ADD MEDICINE');
+			return state;
+		}
+		default:
+			return state;
+	}
+	// console.log(state, action);
+	// return state;
 }
 
 export default addPrescribedMedicineReducer;

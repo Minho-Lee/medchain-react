@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import LoginSection from '../components/HomePageComponents/LoginSection';
 import WelcomeSection from '../components/HomePageComponents/WelcomeSection';
 
+import * as actions from '../actions';
+
 class HomePage extends Component {
-	formSubmit = (props) => {
-		console.log(props);
+	formSubmit = (user) => {
+		// console.log(user);
+		this.props.loginUser({ userid: user.userid, 
+													 password: user.password });
 	}
 	
 	render() {
@@ -17,5 +22,12 @@ class HomePage extends Component {
 		);
 	}
 }
+const mapStateToProps = (state) => {
+	return {
+		userid: state.auth.userid,
+		password: state.auth.password,
+		loggedIn: state.auth.loggedIn,
+	};
+}
 
-export { HomePage };
+export default connect(mapStateToProps, actions)(HomePage);

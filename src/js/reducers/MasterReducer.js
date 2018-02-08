@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
 
-import testPrescribedMedicineReducer from '../reducers/testPrescribedMedicineReducer';
+import TestPrescribedMedicineReducer from './TestPrescribedMedicineReducer';
+import AuthReducer from './AuthReducer';
 
-const masterReducer = combineReducers({
-	testPrescribedMedicineReducer,
-	routing: routerReducer
+export default combineReducers({
+	testMedicine: TestPrescribedMedicineReducer,
+	routing: routerReducer,
+	auth: AuthReducer
 });
-
-export default masterReducer;
