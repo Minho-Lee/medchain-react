@@ -4,11 +4,15 @@ import LoginSection from '../components/HomePageComponents/LoginSection';
 import WelcomeSection from '../components/HomePageComponents/WelcomeSection';
 
 class HomePage extends Component {
+	formSubmit = (props) => {
+		console.log(props);
+	}
+	
 	render() {
 		return (
 			<div className="container">
 				<WelcomeSection />
-				<LoginSection />
+				<LoginSection onFormSubmit={this.formSubmit}/>
 			</div>
 		);
 	}
