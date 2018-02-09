@@ -11,10 +11,11 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 import {
 	DoctorPage,
-	PharmacistPage
+	PharmacistPage,
+	HomePage
 } from './js/pages';
 
-import HomePage from './js/pages/HomePage';
+// import HomePage from './js/pages/HomePage';
 import PatientPage from './js/pages/PatientPage';
 
 import MedCustomNavbar from './js/components/MedCustomNavbar';

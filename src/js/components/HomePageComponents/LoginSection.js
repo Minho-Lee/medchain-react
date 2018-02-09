@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { 
 	InputGroup,
 	InputGroupAddon,
@@ -8,24 +9,23 @@ import {
 	FormGroup,
 	Label } from 'reactstrap';
 
+import * as actions from '../../actions';
+
 class LoginSection extends Component {
-	state = {
-		userid: '',
-		password: ''
-	};
+	//Reduxifying this component into a container. user/pw is kept at store
 
 	handleFormSubmit = (event) => {
-		this.props.onFormSubmit(this.state);
-		this.setState({ userid: '', password: '' });
+		// const { userid, password } = this.props;
+		this.props.loginUser(this.props);
 		event.preventDefault();
 	}
 
 	handleUseridChange = (event) => {
-		this.setState({ userid : event.target.value });
+		this.props.userChanged(event.target.value);
 	}
 
 	handlePasswordChange = (event) => {
-		this.setState({ password : event.target.value });
+		this.props.passwordChanged(event.target.value);
 	}
 
 	render() { 
@@ -38,7 +38,7 @@ class LoginSection extends Component {
 						<InputGroup>
 							<InputGroupAddon addonType='prepend'>@</InputGroupAddon>
 							<Input type='text' name='userid' id='userid' placeholder='user ID'
-										 onChange={this.handleUseridChange} value={this.state.userid}/>
+										 onChange={this.handleUseridChange} value={this.props.userid}/>
 						</InputGroup>
 					</FormGroup>
 
@@ -47,7 +47,7 @@ class LoginSection extends Component {
 						<InputGroup>
 							<InputGroupAddon addonType='prepend'>*</InputGroupAddon>
 							<Input type='password' name='password' id='password' placeholder='password'
-										 onChange={this.handlePasswordChange} value={this.state.password} />
+										 onChange={this.handlePasswordChange} value={this.props.password} />
 						</InputGroup>
 					</FormGroup>
 
@@ -58,4 +58,12 @@ class LoginSection extends Component {
 	}
 }
 
-export default LoginSection;
+const mapStateToProps = (state) => {
+	return {
+		userid: state.auth.userid,
+		password: state.auth.password,
+		loggedIn: state.auth.loggedIn,
+	};
+}
+
+export default connect(mapStateToProps, actions)(LoginSection);
