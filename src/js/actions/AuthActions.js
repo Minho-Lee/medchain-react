@@ -1,14 +1,11 @@
-import {
-	LOGIN_USER,
-	LOGIN_USER_SUCCESS,
-} from './types';
+import { LOGIN_USER } from './types';
 
 export const loginUser = ({ userid, password }) => {
 	return {
 		type: LOGIN_USER,
 		payload: {
 			userid,
-			password
+			password,
 		}
 	}
 };

@@ -6,11 +6,12 @@ import WelcomeSection from '../components/HomePageComponents/WelcomeSection';
 
 import * as actions from '../actions';
 
+import '../../scss/HomePage.css'
+
 class HomePage extends Component {
 	formSubmit = (user) => {
-		// console.log(user);
 		this.props.loginUser({ userid: user.userid, 
-													 password: user.password });
+				password: user.password });
 	}
 	
 	render() {

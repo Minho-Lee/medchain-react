@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
 export default class PatientMetaData extends Component {
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
 
 		this.state = {
-			patientAddress: "288 Spadina Road",
-			patientPhoneNumber: "(416) 338-1882",
-			patientEmail: "zahaank24@gmail.com"
+			patientAddress: this.props.address,
+			patientPhoneNumber: this.props.phone,
+			patientEmail: this.props.email
 		}
 	}
 

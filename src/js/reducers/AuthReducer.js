@@ -1,7 +1,4 @@
-import {
-	LOGIN_USER,
-	LOGIN_USER_SUCCESS,
-} from '../actions/types';
+import { LOGIN_USER } from '../actions/types';
 
 const INIT_STATE = {
 	userid: '',
