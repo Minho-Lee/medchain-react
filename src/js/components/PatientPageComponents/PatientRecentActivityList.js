@@ -3,33 +3,12 @@ import RecentActivity from './RecentActivity';
 
 export default class PatientRecentActivityList extends Component {
 
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
 
 		// dummy values
 		this.state = {
-			recentActivities: [
-				{
-					id: "1",
-					date: "10 days ago",
-					comment: "Appointment Booked"
-				},
-				{
-					id: "2",
-					date: "5 days ago",
-					comment: "Prescription Added: Leo.."
-				},
-				{
-					id: "3",
-					date: "2 days ago",
-					comment: "comment 3"
-				},
-				{
-					id: "4",
-					date: "1 days ago",
-					comment: "Prescription added: ACE Inhibitor Anti-Depressant"
-				}
-			]
+			recentActivities: this.props.recentActivities
 		}
 	}
 

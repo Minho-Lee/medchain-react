@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import McLogo from '../../../images/mclight-logo.png';
 
+import '../../../scss/HomePage.css'
+
+
 export default class WeclomeSection extends Component {
 	render() {
 		return (
-			<div>
+			<div className="container section1">
 				<header className="row">
 					<img  src={McLogo} alt="Smiley face" />
 					<h2>med</h2>

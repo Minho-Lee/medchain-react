@@ -6,7 +6,7 @@ export default class BCTransactionIntro extends Component {
 		return (
 			<div className="container">
 				<header className="row">
-					<img  src={McLogo} />
+					<img  src={McLogo} alt="" />
 					<h1>med</h1>
 					<h1 class="logo-color-change">chain</h1>
 				</header>

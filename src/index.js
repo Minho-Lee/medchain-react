@@ -8,15 +8,15 @@ import { store, history } from './js/stores/store';
 
 import './scss/index.css';
 import 'bootstrap/dist/css/bootstrap.css';
-// import App from './js/App';
+
 import {
-	// HomePage,
 	DoctorPage,
-	PatientPage,
 	PharmacistPage
 } from './js/pages';
 
 import HomePage from './js/pages/HomePage';
+import PatientPage from './js/pages/PatientPage';
+
 import MedCustomNavbar from './js/components/MedCustomNavbar';
 
 import registerServiceWorker from './js/serviceworkers/registerServiceWorker';

@@ -2,13 +2,11 @@ import React, { Component } from 'react';
 import { 
 	InputGroup,
 	InputGroupAddon,
-	InputGroupText, 
 	Input,
 	Button,
 	Form,
 	FormGroup,
-	Label,
-	FormText } from 'reactstrap';
+	Label } from 'reactstrap';
 
 class LoginSection extends Component {
 	state = {
@@ -17,7 +15,6 @@ class LoginSection extends Component {
 	};
 
 	handleFormSubmit = (event) => {
-		// console.log(this.state.id + ' / ' + this.state.password);
 		this.props.onFormSubmit(this.state);
 		this.setState({ userid: '', password: '' });
 		event.preventDefault();

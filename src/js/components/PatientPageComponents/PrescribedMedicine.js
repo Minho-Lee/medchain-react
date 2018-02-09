@@ -5,11 +5,12 @@ export default class PresribedMedicine extends Component {
 		super(props);
 
 		this.state = {
-			MedicineName: this.props.medicine
+			MedicineName: this.props.med
 		}
 	}
 
 	render() {
+		console.log(this.state.MedicineName)
 		return (
 			<li>
 				<span> {this.state.MedicineName} </span>

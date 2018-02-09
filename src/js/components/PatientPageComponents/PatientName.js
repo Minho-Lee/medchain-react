@@ -2,24 +2,21 @@ import React, { Component } from 'react';
 import RandomGuyImage from '../../../images/square-sample-face.jpg';
 
 export default class PatientName extends Component {
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
 
 		this.state = {
-			patientName: "Sukhpal",
-			patientAge: 22,
-			patientOccupation: "Software Developer",
-			patientAddress: "288 Spadina Road",
-			patientPhoneNumber: "(416) 338-1882",
-			patientEmail: "zahaank24@gmail.com"
+			patientName: this.props.name,
+			patientAge: this.props.age,
+			patientOccupation: this.props.occupation
 		}
 	}
 
 	render() {
 		return (
 			<div className="container">
-				<img src={RandomGuyImage} />
-				<h2>{this.state.PatientName}, {this.state.patientPhoneNumber}</h2>
+				<img src={RandomGuyImage} alt="" />
+				<h2>{this.state.patientName}, {this.state.patientAge}</h2>
 				<h3>{this.state.patientOccupation}</h3>
 			</div>
 
