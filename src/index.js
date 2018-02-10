@@ -9,14 +9,10 @@ import { store, history } from './js/stores/store';
 import './scss/index.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-import {
-	DoctorPage,
-	PharmacistPage,
-	HomePage
-} from './js/pages';
+import { PharmacistPage, HomePage } from './js/pages';
 
-// import HomePage from './js/pages/HomePage';
 import PatientPage from './js/pages/PatientPage';
+import DoctorPage from './js/pages/DoctorPage';
 
 import MedCustomNavbar from './js/components/MedCustomNavbar';
 

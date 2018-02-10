@@ -4,3 +4,5 @@ export const LOGIN_USER = 'login_user';
 export const GET_ACTIVE_PATIENT_DATA = 'get_active_patient_data';
 export const USER_CHANGED = 'user_changed';
 export const PASSWORD_CHANGED = 'password_changed';
+export const POST_DOCTOR_PERSCRIPTION = 'post_doctor-prescription';
+
