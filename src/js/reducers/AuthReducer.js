@@ -12,6 +12,7 @@ const INIT_STATE = {
 	user: null,
 	password: '',
 	loggedIn: false,
+	loading: false,
 }
 
 export default (state=INIT_STATE, action) => {
@@ -19,9 +20,7 @@ export default (state=INIT_STATE, action) => {
 		case LOGIN_USER: {
 			console.log('LOGGING IN!');
 			return { ...state,
-								userid: '',
-								password: '',
-								loggedIn: true
+								loading: true,
 			}
 		}
 		case USER_CHANGED: {
@@ -35,13 +34,14 @@ export default (state=INIT_STATE, action) => {
 								// this is to clear out cached info on Redux app state so it doesn't store info
 								...INIT_STATE,
 								user: action.payload,
-								loggedIn: true
+								loggedIn: true,
 							}
 		}
 		case LOGIN_USER_FAIL: {
 			return { ...state,
 								error: 'Authentication failed',
 								loggedIn: false,
+								loading: false,
 								password: '',
 			}
 		}
