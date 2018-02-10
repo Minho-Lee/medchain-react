@@ -8,6 +8,7 @@ import {
 	Form,
 	FormGroup,
 	Label } from 'reactstrap';
+import { Digital } from 'react-activity';
 
 import * as actions from '../../actions';
 
@@ -28,6 +29,22 @@ class LoginSection extends Component {
 		this.props.passwordChanged(event.target.value);
 	}
 
+	renderError = () => {
+		if (this.props.error) {
+			return <p style={{ color: 'red' }}>{this.props.error}</p>;
+		}
+	}
+	renderLoading = () => {
+		if (this.props.loading) {
+			return (
+				<Digital size={20} />
+			)
+		} else {
+			return (
+				<Button type='submit' onClick={this.handleFormSubmit}>Submit</Button>
+			);
+		}
+	}
 	render() { 
 		return (
 			<div>
@@ -50,8 +67,8 @@ class LoginSection extends Component {
 										 onChange={this.handlePasswordChange} value={this.props.password} />
 						</InputGroup>
 					</FormGroup>
-
-					<Button type='submit' onClick={this.handleFormSubmit}>Submit</Button>
+					{this.renderError()}
+					{this.renderLoading()}
 				</Form>
 			</div>
 		);
@@ -63,6 +80,8 @@ const mapStateToProps = (state) => {
 		userid: state.auth.userid,
 		password: state.auth.password,
 		loggedIn: state.auth.loggedIn,
+		loading: state.auth.loading,
+		error: state.auth.error,
 	};
 }
 

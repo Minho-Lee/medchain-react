@@ -7,7 +7,7 @@ import { Button,
 		 Input
  } from 'reactstrap';
 
-import * as actions from '../actions/DoctorPageActions';
+import * as actions from '../actions';
 import { connect } from 'react-redux';
 // import { bindActionCreators } from 'redux';
 

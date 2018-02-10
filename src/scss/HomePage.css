@@ -193,14 +193,13 @@
 }
 
 body {
-	padding-top: 50px;
 	font-family: 'Roboto', sans-serif;
 	color: #323232;
 }
 .navbar .navbar-nav>li>a:focus, .navbar .navbar-nav>li>a:hover {
 	outline: none;
 	color: #9d9d9d;
-	cursor: not-allowed;
+	/*cursor: not-allowed;*/
 }
 
 .radical-button {

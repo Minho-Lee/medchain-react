@@ -14,12 +14,15 @@ export default class PatientName extends Component {
 
 	render() {
 		return (
-			<div className="container">
-				<img src={RandomGuyImage} alt="" />
-				<h2>{this.state.patientName}, {this.state.patientAge}</h2>
-				<h3>{this.state.patientOccupation}</h3>
+			<div className="row">
+				<div className='col-md-6'>
+					<img className='mr-3' src={RandomGuyImage} height={300} alt="" />
+				</div>
+				<div className='col-md-6'>
+					<h2>{this.state.patientName}, {this.state.patientAge}</h2>
+					<h3>{this.state.patientOccupation}</h3>
+				</div>
 			</div>
-
 		);
 	}
 }
