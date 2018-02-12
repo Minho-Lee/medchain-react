@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { push } from 'react-router-redux';
 import { 
 	InputGroup,
 	InputGroupAddon,
@@ -10,10 +11,19 @@ import {
 	Label } from 'reactstrap';
 import { Digital } from 'react-activity';
 
+import { store } from '../../stores/store';
 import * as actions from '../../actions';
 
 class LoginSection extends Component {
 	//Reduxifying this component into a container. user/pw is kept at store
+	componentDidUpdate() {
+		// const { router } = this.context;
+		// console.log(router);
+		if (this.props.loggedIn) {
+			console.log('Redirect!');
+			store.dispatch(push('/patient'));
+		}	
+	}
 
 	handleFormSubmit = (event) => {
 		// const { userid, password } = this.props;

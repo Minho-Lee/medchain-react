@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-
+import { connect } from 'react-redux';
+import { push } from 'react-router-redux';
 import { Button, 
 		 Form, 
 		 FormGroup, 
@@ -7,8 +8,9 @@ import { Button,
 		 Input
  } from 'reactstrap';
 
+import { store } from '../stores/store';
 import * as actions from '../actions';
-import { connect } from 'react-redux';
+
 // import { bindActionCreators } from 'redux';
 
 class DoctorPage extends Component {
@@ -34,6 +36,7 @@ class DoctorPage extends Component {
 		};
 
 		this.props.PostDoctorPrescription({...data});
+		store.dispatch(push('/pharmacist'));
 	}
 
 	onSelectedMedicineChange(event) {
