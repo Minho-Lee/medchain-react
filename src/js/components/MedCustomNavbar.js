@@ -33,13 +33,13 @@ export default class MedCustomNavBar extends Component {
 					<Collapse isOpen={this.state.isOpen} navbar>
 						<Nav className="ml-auto" navbar>
 							<NavItem>
-								<NavLink href='patient'>Patient</NavLink>
+								<NavLink disabled href='patient'>Patient</NavLink>
 							</NavItem>
 							<NavItem>
-								<NavLink href="pharmacist">Pharmacist</NavLink>
+								<NavLink disabled href="pharmacist">Pharmacist</NavLink>
 							</NavItem>
 							<NavItem>
-								<NavLink href="doctor">Doctor</NavLink>
+								<NavLink disabled href="doctor">Doctor</NavLink>
 							</NavItem>
 						</Nav>
 					</Collapse>
