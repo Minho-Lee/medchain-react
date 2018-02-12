@@ -10,12 +10,12 @@ import './scss/index.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
 import {
-	PharmacistPage,
 	HomePage
 } from './js/pages';
 
 import PatientPage from './js/pages/PatientPage';
 import DoctorPage from './js/pages/DoctorPage';
+import PharmacistPage from './js/pages/PharmacistPage';
 
 import MedCustomNavbar from './js/components/MedCustomNavbar';
 
