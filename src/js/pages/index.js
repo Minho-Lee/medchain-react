@@ -2,9 +2,9 @@
 // index.js usually exists in each folder to aggregate and make all other components accessible from
 // a single entry point.
 
-export * from './PatientPage';
-export * from './PharmacistPage';
-export * from './DoctorPage';
+// export * from './PatientPage';
+// export * from './PharmacistPage';
+// export * from './DoctorPage';
 export * from './HomePage';
 export * from './BCTransactionPage';
 

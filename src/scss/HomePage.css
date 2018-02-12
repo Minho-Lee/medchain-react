@@ -199,7 +199,7 @@ body {
 .navbar .navbar-nav>li>a:focus, .navbar .navbar-nav>li>a:hover {
 	outline: none;
 	color: #9d9d9d;
-	/*cursor: not-allowed;*/
+	cursor: not-allowed;
 }
 
 .radical-button {
