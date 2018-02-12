@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import PatientName from '../components/PatientPageComponents/PatientName';
 import PatientMetaData from '../components/PatientPageComponents/PatientMetaData';
@@ -27,7 +28,9 @@ class PatientPage extends Component {
 				<PatientPrescribedMedicines medPrescribed={this.props.medPrescribed}/>
 				<PatientTreatmentFor />
 				<PatientRecentActivity recentActivities={this.props.recentActivities}/>
-				<Button>See a Doctor </Button>
+				<Link to='/doctor'>
+					<Button>See a Doctor</Button>
+				</Link>
 			</div>
 		);
 	}

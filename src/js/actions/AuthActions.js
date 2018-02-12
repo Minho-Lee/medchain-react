@@ -20,24 +20,22 @@ export const loginUser = ({ userid, password }) => {
 		// Only if user is authenticated, it will go into 'then()' which will trigger the dispatch
 		firebase.auth().signInWithEmailAndPassword(userid, password)
 			.then((user) => {
-				console.log(user);
+				// console.log(user);
 				loginUserSuccess(dispatch, user);
 			})
 			.catch((error) => {
-				console.log(error);
-				firebase.auth().createUserWithEmailAndPassword(userid, password)
-					.then((user) => loginUserSuccess(dispatch, user))
-					.catch((error) => loginUserFail(dispatch));
+				// For now, only going to be dealing with users that are already registered.
+				// Hence, no new registration will be accepted (perhaps registration will be implemented in future)
+				loginUserFail(dispatch);
+				// console.log(error);
+				// firebase.auth().createUserWithEmailAndPassword(userid, password)
+				// 	.then((user) => loginUserSuccess(dispatch, user))
+				// 	.catch((error) => {
+				// 		console.log(error);
+				// 		loginUserFail(dispatch)
+				// 	});
 			})
 	}
-
-	// return {
-	// 	type: LOGIN_USER,
-	// 	payload: {
-	// 		userid,
-	// 		password,
-	// 	}
-	// }
 };
 
 export const userChanged = (text) => {
