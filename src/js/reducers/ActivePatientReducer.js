@@ -1,4 +1,7 @@
-import { GET_ACTIVE_PATIENT_DATA } from '../actions/types';
+import { 
+	GET_ACTIVE_PATIENT_DATA,
+	SAVE_PATIENT_DATA
+} from '../actions/types';
  
  
 // TODO: Get this inital state from DB, maybe make it a list of patients you can choose from
@@ -62,6 +65,10 @@ export default (state=INIT_STATE, action) => {
     case GET_ACTIVE_PATIENT_DATA: { 
       return { ...state } 
     } 
+
+    case SAVE_PATIENT_DATA: {
+    	return { payload: action.payload };
+    }
  
     default: 
       return state; 

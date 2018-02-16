@@ -18,8 +18,8 @@ class PharmacistPage extends Component {
 
 	render() {
 		const { id, name, age, occupation, address, phone, email,
-						medPrescribed, recentActivities } = this.props;
-		
+						medPrescribed, recentActivities, payload } = this.props;
+
 		return(
 			<div className='container'>
 				<PharmacyHeading />
@@ -42,7 +42,7 @@ const mapStateToProps = (state) => {
 		phone: state.activePat.phone,
 		email: state.activePat.email,
 		medPrescribed: state.activePat.medPrescribed,
-		recentActivities: state.activePat.recentActivities
+		recentActivities: state.activePat.recentActivities,
 	}
 }
 
