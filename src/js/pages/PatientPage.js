@@ -16,11 +16,18 @@ class PatientPage extends Component {
 
 	// When the page loads, grab the default data and set it into props
 	componentDidMount = () => {
+		// console.log(this.props);
 		this.props.GetActivePatientData(1);
 	}
 
+	onButtonClick = () => {
+		// console.log(this.props);
+		this.props.SaveToFirebase(this.props);
+		// console.log(this.props);
+	}
+
 	render() {
-		console.log(this.props);
+		// console.log(this.props);
 		return (
 			<div className="container">
 				<PatientName name={this.props.name} age={this.props.age} occupation={this.props.occupation}/>
@@ -29,7 +36,7 @@ class PatientPage extends Component {
 				<PatientTreatmentFor />
 				<PatientRecentActivity recentActivities={this.props.recentActivities}/>
 				<Link to='/doctor'>
-					<Button>See a Doctor</Button>
+					<Button onClick={this.onButtonClick}>See a Doctor</Button>
 				</Link>
 			</div>
 		);
@@ -47,7 +54,7 @@ const mapStateToProps = (state) => {
 		phone: state.activePat.phone,
 		email: state.activePat.email,
 		medPrescribed: state.activePat.medPrescribed,
-		recentActivities: state.activePat.recentActivities
+		recentActivities: state.activePat.recentActivities,
 	};
 }
 
