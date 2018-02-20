@@ -26,6 +26,7 @@ export const loginUser = ({ userid, password }) => {
 			.catch((error) => {
 				// For now, only going to be dealing with users that are already registered.
 				// Hence, no new registration will be accepted (perhaps registration will be implemented in future)
+				console.log(error);
 				loginUserFail(dispatch);
 				// console.log(error);
 				// firebase.auth().createUserWithEmailAndPassword(userid, password)

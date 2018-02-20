@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
+import _ from 'lodash';
 import { Button, 
 		 Form, 
 		 FormGroup, 
@@ -25,6 +26,7 @@ class DoctorPage extends Component {
 			dropdownOpen: false,
 			selectedMedicine: "Levothyroxine",
 			doctorComment: "",
+			renderTest: false,
 		};
 	}
 
@@ -32,7 +34,7 @@ class DoctorPage extends Component {
 		event.preventDefault();
 		const data = {
 			selMed: this.state.selectedMedicine,
-			docCom: this.state.doctorComment
+			docCom: this.state.doctorComment,
 		};
 
 		this.props.PostDoctorPrescription({...data});
@@ -53,7 +55,57 @@ class DoctorPage extends Component {
 		});
 	}
 
+	//testing out pulling information out from firebase db
+	componentWillMount() {
+		this.props.FetchPatientData('Sukhpal');
+	}
+	testingFirebase = () => {
+		this.props.FetchPatientData('Sukhpal');
+		this.setState({ renderTest : true });
+		// console.log('re rendering! ' + this.state.renderTest);
+	}
+
+	renderTestFB = () => {
+		if (this.state.renderTest) {
+			console.log(this.props.patient);
+			var copy = _.values(this.props.patient);
+			// const patientInfo = copy.map((item, i) => 
+			// 	<li key={i}>
+			// 		{item}
+			// 	</li>
+			// );
+			
+
+			const patientInfo = Object.keys(this.props.patient).map((key) => {
+				var item = this.props.patient[key];
+				console.log(key);
+				console.log(item);
+				console.log(item.address);
+				console.log(item.occupation);
+				return (
+					<li key={item.uid}>
+						{item.age}<br/>
+						{item.address}<br/>
+						{item.occupation}<br/>
+						{item.phone}<br/>
+					</li>
+				);
+			});
+			console.log(patientInfo);
+
+			return (
+				<div>
+					<ul>{patientInfo}</ul>
+				</div>
+			);
+			// return (
+			// 	<p>{this.props.patient[0].address}</p>
+			// );
+		}
+	}
+
 	render() {
+		console.log(this.props);
 		return(
 			<div>
 				<h1>Doctor Page!</h1>
@@ -72,7 +124,10 @@ class DoctorPage extends Component {
 						<Input type="textarea" name="doctorComment" id="doctorComment" onChange={this.onDoctorCommentChange} />
 					</FormGroup>
 					<Button type="submit">Submit To Pharmacist</Button>
+					<Button type='button' onClick={this.testingFirebase}>Test Firebase</Button>
 				</Form>
+				
+				{this.renderTestFB()}
 			</div>
 		);
 	}
@@ -89,12 +144,24 @@ class DoctorPage extends Component {
  // 	return bindActionCreators(actions, dispatch);
  // };
 
-
-
-const bindActionsToDispath = (dispatch) => (
-	{
-		PostDoctorPrescription: (data) => dispatch(actions.PostDoctorPrescription(data))
+const mapStateToProps = ( state ) => {
+	console.log(state.activePat);
+	const patient = _.map(state.activePat, (val, uid) => {
+		console.log(uid);
+		console.log(val);
+		return {...val, uid}
+	})
+	return {
+		patient
+		//name: state.activePat.name,
 	}
-);
+}
 
-export default connect(null, bindActionsToDispath)(DoctorPage);
+
+// const bindActionsToDispath = (dispatch) => (
+// 	{
+// 		PostDoctorPrescription: (data) => dispatch(actions.PostDoctorPrescription(data))
+// 	}
+// );
+
+export default connect(mapStateToProps, actions)(DoctorPage);

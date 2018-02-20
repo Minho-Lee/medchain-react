@@ -1,6 +1,7 @@
 import { 
 	GET_ACTIVE_PATIENT_DATA,
-	SAVE_PATIENT_DATA
+	SAVE_PATIENT_DATA,
+	FETCH_PATIENT_DATA,
 } from '../actions/types';
  
  
@@ -69,8 +70,13 @@ export default (state=INIT_STATE, action) => {
     case SAVE_PATIENT_DATA: {
     	return { payload: action.payload };
     }
+
+    case FETCH_PATIENT_DATA: {
+    	console.log(action.payload);
+    	return action.payload;
+    }
  
     default: 
       return state; 
-  } 
+  }
 }
