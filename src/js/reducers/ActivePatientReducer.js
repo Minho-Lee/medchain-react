@@ -1,70 +1,64 @@
 import { 
 	GET_ACTIVE_PATIENT_DATA,
+  GET_ACTIVE_PATIENT_DATA_SUCCESS,
+  GET_ACTIVE_PATIENT_DATA_FAIL,
 	SAVE_PATIENT_DATA
 } from '../actions/types';
  
  
 // TODO: Get this inital state from DB, maybe make it a list of patients you can choose from
 const INIT_STATE = {
-  id: 1,
-  name: "Sukhpal",
-  age: 22,
-  occupation: "Software Developer",
-  address: "288 Spadina Road",
-  phone: "(416) 338-1882",
-  email: "zahaank24@gmail.com",
-  medPrescribed: [ 
-    {
-      id: 1,
-      med: "Ribavirin"
-    },
-    { 
-      id: 2,
-      med: "Insulin"
-    }, 
-    {
-      id: 3,
-      med: "ACE Inhibitor"
-    }, 
-    { 
-      id: 4,
-      med: "Anti-Depresesant"
-    }, 
-    { 
-      id: 5,
-      med: "Levothyroxine"
-    }
-  ], 
-  recentActivities: [
-    {
-      id: "1",
-      date: "10 days ago",
-      comment: "Appointment Booked"
-    },
-    {
-      id: "2",
-      date: "5 days ago",
-      comment: "Prescription Added: Leo.."
-    },
-    { 
-      id: "3", 
-      date: "2 days ago", 
-      comment: "comment 3" 
-    }, 
-    { 
-      id: "4", 
-      date: "1 days ago", 
-      comment: "Prescription added: ACE Inhibitor Anti-Depressant" 
-    } 
-  ] 
+  name: "",
+  id: 0,
+  age: 0,
+  occupation: "",
+  address: "",
+  phone: "",
+  email: "",
+  medPrescribed: [], 
+  recentActivities: []
  
 } 
  
 export default (state=INIT_STATE, action) => { 
   switch (action.type) { 
     case GET_ACTIVE_PATIENT_DATA: { 
-      return { ...state } 
+      console.log(action.payload);
+      return { payload: action.payload } 
     } 
+
+    case GET_ACTIVE_PATIENT_DATA_SUCCESS: {
+      console.log(action.payload);
+
+      const patientInfo = Object.keys(action.payload).map((key) => {
+        var item = action.payload[key];
+        console.log(key);
+        console.log(item);
+
+        const patientInfo2 = Object.keys(item).map((key2) => {
+          var item2 = item[key]
+          console.log(item2.address);
+          console.log(item2.occupation);
+        });
+
+      });
+
+      return { ...state, 
+                  name: 'zahaan',
+                  id: '',
+                  age: 0,
+                  occupation: 'SoftEng',
+                  address: '',
+                  phone: '',
+                  email: '',
+                  medPrescribed: [],
+                  recentActivities: []
+              }
+      }
+
+    case GET_ACTIVE_PATIENT_DATA_FAIL: {
+      return {...state, payload: action.payload }
+    }
 
     case SAVE_PATIENT_DATA: {
     	return { payload: action.payload };

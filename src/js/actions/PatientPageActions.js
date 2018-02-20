@@ -2,17 +2,57 @@ import firebase from 'firebase';
 
 import { 
 	GET_ACTIVE_PATIENT_DATA,
+	GET_ACTIVE_PATIENT_DATA_SUCCESS,
+	GET_ACTIVE_PATIENT_DATA_FAIL,
 	SAVE_PATIENT_DATA
 } from './types';
 
-export const GetActivePatientData = (id) => {
-	return {
-		type: GET_ACTIVE_PATIENT_DATA,
-		payload: {
-			id
-		}
+
+export const GetActivePatientData = () => {
+	return (dispatch) => {
+		dispatch({
+			type: GET_ACTIVE_PATIENT_DATA
+		});
+
+		console.log('dispathed: GET_ACTIVE_PATIENT_DATA');
+
+		const db = firebase.database();
+		const { currentUser } = firebase.auth();
+
+		console.log(currentUser);
+		const dbUserInfoRef = db.ref('users').child(currentUser.uid);
+
+		console.log(currentUser.uid);
+
+		let user;
+
+		dbUserInfoRef.once('value', snapshot => {
+			user = snapshot.val();
+			console.log(user);
+			GetActivePatientDataSuccess(dispatch, user);
+		}).catch((error) => {
+			console.log(error);
+			GetActivePatientDataFail(dispatch);
+		});
 	}
-};
+}
+
+const GetActivePatientDataSuccess = (dispatch, user) => {
+	console.log('dispathed: GET_ACTIVE_PATIENT_DATA_SUCCESS');
+
+	dispatch({
+		type: GET_ACTIVE_PATIENT_DATA_SUCCESS,
+		payload: user
+	});
+}
+
+const GetActivePatientDataFail= (dispatch) => {
+	console.log('dispathed: GET_ACTIVE_PATIENT_DATA_FAIL');
+	dispatch({
+		type: GET_ACTIVE_PATIENT_DATA_SUCCESS,
+		payload: "Error: Could not retrive patient data",
+	});
+}
 
 export const SaveToFirebase = ({name, age, occupation, address, phone, email,
 																medPrescribed, recentActivities}) => {

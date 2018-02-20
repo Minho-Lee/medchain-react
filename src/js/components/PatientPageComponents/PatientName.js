@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import RandomGuyImage from '../../../images/square-sample-face.jpg';
 
 const PatientName = ({name, age, occupation}) => {

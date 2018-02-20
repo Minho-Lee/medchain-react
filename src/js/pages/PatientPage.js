@@ -13,11 +13,13 @@ import * as actions from '../actions';
 import { Button } from 'reactstrap';
 
 class PatientPage extends Component {
+	constructor() {
+		super();
+	}
 
 	// When the page loads, grab the default data and set it into props
 	componentDidMount = () => {
-		// console.log(this.props);
-		this.props.GetActivePatientData(1);
+		this.props.GetActivePatientData();
 	}
 
 	onButtonClick = () => {
@@ -26,10 +28,13 @@ class PatientPage extends Component {
 		// console.log(this.props);
 	}
 
+	// componentWillUnmount = () => {
+	// 	this.firebase.off();
+	// }
+
 	render() {
-		// console.log(this.props);
 		return (
-			<div className="container">
+			<div>
 				<PatientName name={this.props.name} age={this.props.age} occupation={this.props.occupation}/>
 				<PatientMetaData address={this.props.address} phone={this.props.phone} email={this.props.email}/>
 				<PatientPrescribedMedicines medPrescribed={this.props.medPrescribed}/>
@@ -46,6 +51,7 @@ class PatientPage extends Component {
 
 const mapStateToProps = (state) => {
 	return {
+		uid: state.activePat.uid,
 		id: state.activePat.id,
 		name: state.activePat.name,
 		age: state.activePat.age,

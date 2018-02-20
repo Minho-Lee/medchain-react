@@ -19,9 +19,7 @@ export default (state=INIT_STATE, action) => {
 	switch (action.type){
 		case LOGIN_USER: {
 			console.log('Attempting to log in...');
-			return { ...state,
-								loading: true,
-			}
+			return { ...state, loading: true }
 		}
 		case USER_CHANGED: {
 			return { ...state, userid: action.payload }

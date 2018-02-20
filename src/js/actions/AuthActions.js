@@ -34,7 +34,17 @@ export const loginUser = ({ userid, password }) => {
 				// 		console.log(error);
 				// 		loginUserFail(dispatch)
 				// 	});
-			})
+			}
+		);
+
+		// authentication listner to handle page refresh, login/logout
+		firebase.auth().onAuthStateChanged(firebaseUser => {
+			if(firebaseUser) {
+				console.log(firebaseUser);
+			} else {
+				console.log("Not logged in anymore");
+			}
+		})
 	}
 };
 
