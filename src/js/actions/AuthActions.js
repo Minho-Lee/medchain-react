@@ -44,7 +44,7 @@ export const loginUser = ({ userid, password }) => {
 			} else {
 				console.log("Not logged in anymore");
 			}
-		})
+		});
 	}
 };
 

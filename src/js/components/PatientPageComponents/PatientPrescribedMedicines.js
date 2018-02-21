@@ -2,16 +2,19 @@ import React, { Component } from 'react';
 
 import PatientPrescribedMedicineList from './PatientPrescribedMedicineList';
 
-
 export default class PatientPrescribedMedicines extends Component {
 	constructor(props) {
 		super(props);
 
-		console.log(this.props.medPrescribed);
-
 		this.state = {
 			medPrescribed: this.props.medPrescribed
 		}
+	}
+
+	componentWillReceiveProps = (nextProps) => {
+		this.setState({
+				medPrescribed: nextProps.medPrescribed 
+		});	
 	}
 
 	render() {

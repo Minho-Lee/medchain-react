@@ -23,38 +23,35 @@ const INIT_STATE = {
 export default (state=INIT_STATE, action) => { 
   switch (action.type) { 
     case GET_ACTIVE_PATIENT_DATA: { 
-      console.log(action.payload);
       return { payload: action.payload } 
     } 
 
     case GET_ACTIVE_PATIENT_DATA_SUCCESS: {
-      console.log(action.payload);
+      let patientInfo = {};
 
-      const patientInfo = Object.keys(action.payload).map((key) => {
+
+      Object.keys(action.payload).map((key) => {
         var item = action.payload[key];
-        console.log(key);
-        console.log(item);
 
-        const patientInfo2 = Object.keys(item).map((key2) => {
-          var item2 = item[key]
-          console.log(item2.address);
-          console.log(item2.occupation);
+        Object.keys(item).map((key2) => {
+          var item2 = item[key2]
+          patientInfo = {
+            name: key,
+            id: key2,
+            age: item2.age,
+            occupation: item2.occupation,
+            address: item2.address,
+            phone: item2.phone,
+            email: item2.email,
+            medPrescribed: item2.medPrescribed,
+            recentActivities: item2.recentActivities
+          }
         });
+    });
 
-      });
 
-      return { ...state, 
-                  name: 'zahaan',
-                  id: '',
-                  age: 0,
-                  occupation: 'SoftEng',
-                  address: '',
-                  phone: '',
-                  email: '',
-                  medPrescribed: [],
-                  recentActivities: []
-              }
-      }
+    return { ...state, ...patientInfo }
+    }
 
     case GET_ACTIVE_PATIENT_DATA_FAIL: {
       return {...state, payload: action.payload }

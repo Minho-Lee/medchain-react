@@ -7,13 +7,22 @@ export default class PatientPrescribedMedicineList extends Component {
 		super(props);
 
 		this.state = {
-			MedicinesPrescribed: this.props.medPrescribed
+			medPrescribed: this.props.medPrescribed
 		}
 	}
 
+
+	componentWillReceiveProps = (nextProps) => {
+		if(nextProps.medPrescribed) {
+			this.setState({
+				medPrescribed: nextProps.medPrescribed
+			});	
+		}
+
+	}
+
 	render() {
-		console.log(this.state.MedicinesPrescribed);
-		const medicinesPrescribedComponents = this.state.MedicinesPrescribed.map((medicine) => {
+		const medicinesPrescribedComponents = this.state.medPrescribed.map((medicine) => {
 			return <PrescribedMedicine key={medicine.id} {...medicine}/>;
 		});
 

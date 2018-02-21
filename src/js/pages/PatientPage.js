@@ -13,9 +13,6 @@ import * as actions from '../actions';
 import { Button } from 'reactstrap';
 
 class PatientPage extends Component {
-	constructor() {
-		super();
-	}
 
 	// When the page loads, grab the default data and set it into props
 	componentDidMount = () => {
@@ -27,6 +24,10 @@ class PatientPage extends Component {
 		this.props.SaveToFirebase(this.props);
 		// console.log(this.props);
 	}
+
+	// componentWillReceiveProps = (nextProps) => {
+	// 	console.log(nextProps);
+	// }
 
 	// componentWillUnmount = () => {
 	// 	this.firebase.off();
@@ -51,7 +52,6 @@ class PatientPage extends Component {
 
 const mapStateToProps = (state) => {
 	return {
-		uid: state.activePat.uid,
 		id: state.activePat.id,
 		name: state.activePat.name,
 		age: state.activePat.age,

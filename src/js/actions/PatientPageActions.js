@@ -18,20 +18,15 @@ export const GetActivePatientData = () => {
 
 		const db = firebase.database();
 		const { currentUser } = firebase.auth();
-
-		console.log(currentUser);
 		const dbUserInfoRef = db.ref('users').child(currentUser.uid);
 
-		console.log(currentUser.uid);
 
 		let user;
 
 		dbUserInfoRef.once('value', snapshot => {
 			user = snapshot.val();
-			console.log(user);
 			GetActivePatientDataSuccess(dispatch, user);
 		}).catch((error) => {
-			console.log(error);
 			GetActivePatientDataFail(dispatch);
 		});
 	}
