@@ -59,14 +59,14 @@ export default (state=INIT_STATE, action) => {
       }
       patientInfo['diseases'] = disList;
 
-      // TODO: setup Recent Activity
-      // var recAct = action.payload.RecentActivities;
-      // var recActList = [];
-      // for(let key in recAct) {
-      //   recAct[key]['id'] = key;
-      //   recActList.push(recAct[key]);
-      // }
-      // patientInfo['recentActivities'] = recActList;
+      // setup Recent Acitvity
+      var recAct = action.payload.RecentActivity;
+      var recActList = [];
+      for(let key in recAct) {
+        recAct[key]['id'] = key;
+        recActList.push(recAct[key]);
+      }
+      patientInfo['recentActivities'] = recActList;
 
 
     return { ...state, ...patientInfo }

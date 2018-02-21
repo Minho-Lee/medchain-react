@@ -81,18 +81,20 @@ export const SavePatientDisease = ({disease}) => {
 	const { currentUser } = firebase.auth();
 	console.log(currentUser);
 
-	var today = new Date();
-	var dd = today.getDate();
-	var mm = today.getMonth() + 1;
-	var yy = today.getFullYear();
-
-	today = dd + '/' + mm + '/' + yy;
+	var today = new Date().toJSON().slice(0,10).replace(/-/g,'/');
 
 	return (dispatch) => {
-		const dbRef = firebase.database().ref('users').child(currentUser.uid).child('Diseases');
-		dbRef.push({
+		const dbRefDisease = firebase.database().ref('users').child(currentUser.uid).child('Diseases');
+		const dbRefRecAct = firebase.database().ref('users').child(currentUser.uid).child('RecentActivity');
+
+		dbRefDisease.push({
 				disease,
 				date: today
-			});
+		});
+
+		dbRefRecAct.push({
+			comment: 'Patient has new disease: ' + disease,
+			date: today
+		});
 	}
 }
