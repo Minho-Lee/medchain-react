@@ -1,0 +1,367 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"day",
+				"dayDifference"
+			],
+			[
+				"get",
+				"getUTCDate"
+			],
+			[
+				"getU",
+				"getUTCMonth"
+			],
+			[
+				"new",
+				"newDate"
+			],
+			[
+				"for",
+				"formattedDate"
+			],
+			[
+				"med",
+				"medPrescribed"
+			],
+			[
+				"dis",
+				"diseases"
+			],
+			[
+				"pa",
+				"patientInfo2"
+			],
+			[
+				"pat",
+				"patientInfo"
+			],
+			[
+				"Pa",
+				"PatientInfo"
+			],
+			[
+				"item",
+				"item"
+			],
+			[
+				"Dis",
+				"DiseaseDropdown"
+			],
+			[
+				"ons",
+				"onSelectedDiseaseChange"
+			],
+			[
+				"onS",
+				"onSelectedDiseaseChange"
+			],
+			[
+				"us",
+				"users"
+			],
+			[
+				"cw",
+				"cwr\tReact: componentWillReceiveProps: fn(np) { ... }"
+			],
+			[
+				"s",
+				"state\tReact: this.state."
+			],
+			[
+				"Pat",
+				"PatientPrescribedMedicines"
+			],
+			[
+				"me",
+				"medPrescribed"
+			],
+			[
+				"re",
+				"recentActivities"
+			],
+			[
+				"pati",
+				"patientInfo"
+			],
+			[
+				"fire",
+				"firebaseUser"
+			],
+			[
+				"pro",
+				"props\tReact: this.props."
+			],
+			[
+				"active",
+				"activeTab"
+			],
+			[
+				"GET",
+				"GET_ACTIVE_PATIENT_DATA"
+			],
+			[
+				"Get",
+				"GetActivePatientDataFail"
+			],
+			[
+				"Pati",
+				"PatientPage"
+			],
+			[
+				"act",
+				"activePat"
+			],
+			[
+				"gET",
+				"GetActivePatientData"
+			],
+			[
+				"RE",
+				"RecentActivity"
+			],
+			[
+				"PAt",
+				"PatientPrescribedMedicines"
+			],
+			[
+				"Dro",
+				"DropdownItem"
+			],
+			[
+				"Drop",
+				"DropdownToggle"
+			],
+			[
+				"Fo",
+				"FormGroup"
+			],
+			[
+				"cons",
+				"console"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 119.0,
+		"last_filter": "install",
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"Pack",
+				"Install Package Control"
+			]
+		],
+		"width": 438.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/Zahaan/Documents/medchain-react/src/js/reducers/testPrescribedMedicineReducer.js",
+		"/Users/Zahaan/Documents/medchain-react/src/js/reducers/DoctorPrescriptionReducer.js",
+		"/Users/Zahaan/Documents/medchain-react/src/js/pages/DoctorPage.js",
+		"/Users/Zahaan/Documents/medchain-react/src/js/actions/DoctorPageActions.js",
+		"/Users/Zahaan/Documents/medchain-react/src/js/actions/PatientPageActions.js",
+		"/Users/Zahaan/Documents/medchain-react/src/js/components/PatientPageComponents/DiseaseDropdown.js",
+		"/Users/Zahaan/Documents/medchain-react/src/js/actions/types.js",
+		"/Users/Zahaan/Documents/medchain-react/src/js/components/PatientPageComponents/PatientPrescribedMedicineList.js",
+		"/Users/Zahaan/Documents/medchain-react/src/js/components/PatientPageComponents/PatientName.js",
+		"/Users/Zahaan/Documents/medchain-react/node_modules/redux/es/bindActionCreators.js",
+		"/Users/Zahaan/Documents/medchain-react/src/js/reducers/AuthReducer.js",
+		"/Users/Zahaan/Documents/medchain-react/src/js/components/PatientPageComponents/PatientPrescribedMedicines.js",
+		"/Users/Zahaan/Documents/medchain-react/src/js/pages/PatientPage.js",
+		"/Users/Zahaan/Documents/medchain-react/src/js/components/PatientPageComponents/PrescribedMedicine.js",
+		"/Users/Zahaan/Documents/medchain-react/src/js/components/PatientPageComponents/PatientRecentActivity.js",
+		"/Users/Zahaan/Documents/medchain-react/src/js/reducers/ActivePatientReducer.js",
+		"/Users/Zahaan/Documents/medchain-react/src/js/reducers/MasterReducer.js",
+		"/Users/Zahaan/Documents/medchain-react/src/js/actions/AuthActions.js",
+		"/Users/Zahaan/Documents/medchain-react/src/js/components/PatientPageComponents/PatientRecentActivityList.js",
+		"/Users/Zahaan/Documents/medchain-react/src/js/components/PatientPageComponents/RecentActivity.js",
+		"/Users/Zahaan/Documents/ReactProjectsTest4/medchain-react/src/js/components/HomePageComponents/LoginSection.js",
+		"/Users/Zahaan/Documents/ReactProjectsTest4/medchain-react/src/js/actions/AuthActions.js",
+		"/Users/Zahaan/Documents/ReactProjectsTest4/medchain-react/src/js/actions/PatientPageActions.js",
+		"/Users/Zahaan/Documents/ReactProjectsTest4/medchain-react/src/js/reducers/AuthReducer.js",
+		"/Users/Zahaan/Documents/ReactProjectsTest4/medchain-react/src/js/reducers/TestPrescribedMedicineReducer.js",
+		"/Users/Zahaan/Documents/ReactProjectsTest4/medchain-react/src/js/reducers/ActivePatientReducer.js",
+		"/Users/Zahaan/Documents/ReactProjectsTest4/medchain-react/src/js/components/PatientPageComponents/PrescribedMedicine.js",
+		"/Users/Zahaan/Documents/ReactProjectsTest4/medchain-react/src/js/pages/HomePage.js",
+		"/Users/Zahaan/Documents/ReactProjectsTest4/medchain-react/src/js/components/PatientPageComponents/PatientMetaData.js",
+		"/Users/Zahaan/Documents/ReactProjectsTest4/medchain-react/src/js/components/PatientPageComponents/PatientRecentActivity.js",
+		"/Users/Zahaan/Documents/ReactProjectsTest4/medchain-react/src/js/components/MedCustomNavbar.js",
+		"/Users/Zahaan/Documents/ReactProjectsTest4/medchain-react/src/js/reducers/MasterReducer.js",
+		"/Users/Zahaan/Documents/ReactProjectsTest4/medchain-react/src/App.js",
+		"/Users/Zahaan/Documents/ReactProjectsTest4/medchain-react/src/js/reducers/DoctorPrescriptionReducer.js",
+		"/Users/Zahaan/Documents/ReactProjectsTest4/medchain-react/src/js/components/PatientPageComponents/PatientPrescribedMedicines.js",
+		"/Users/Zahaan/Documents/ReactProjectsTest4/medchain-react/src/js/actions/types.js",
+		"/Users/Zahaan/Documents/ReactProjectsTest4/medchain-react/src/js/stores/store.js",
+		"/Users/Zahaan/Documents/ReactProjectsTest4/medchain-react/src/js/components/PatientPageComponents/PatientPrescribedMedicineList.js",
+		"/Users/Zahaan/Documents/ReactProjectsTest4/medchain-react/src/index.js",
+		"/Users/Zahaan/Documents/ReactProjectsTest4/medchain-react/src/js/pages/PharmacistPage.js",
+		"/Users/Zahaan/Documents/ReactProjectsTest4/medchain-react/src/js/components/PatientPageComponents/PatientName.js",
+		"/Users/Zahaan/Documents/ReactProjectsTest4/medchain-react/src/js/components/PharmacistPageComponents/Details.js",
+		"/Users/Zahaan/Documents/ReactProjectsTest4/medchain-react/src/js/components/PatientPageComponents/DiseaseDropdown.js",
+		"/Users/Zahaan/Documents/ReactProjectsTest4/medchain-react/src/js/stores/testData/defaultPrescribedMedicineData.js",
+		"/Users/Zahaan/Documents/ReactProjectsTest4/medchain-react/src/js/components/PatientPageComponents/RecentActivity.js",
+		"/Users/Zahaan/Documents/ReactProjectsTest4/medchain-react/src/js/components/HomePageComponents/WelcomeSection.js",
+		"/Users/Zahaan/Documents/ReactProjectsTest4/medchain-react/src/js/components/PharmacistPageComponents/Comments.js",
+		"/Users/Zahaan/Documents/ReactProjectsTest4/medchain-react/src/js/components/PharmacistPageComponents/Payment.js",
+		"/Users/Zahaan/Documents/ReactProjectsTest4/medchain-react/src/js/pages/DoctorPage.js",
+		"/Users/Zahaan/Documents/ReactProjectsTest4/medchain-react/src/js/actions/DoctorPageActions.js",
+		"/Users/Zahaan/Documents/ReactProjectsTest4/medchain-react/src/js/actions/index.js",
+		"/Users/Zahaan/Documents/ReactProjectsTest4/medchain-react/src/js/components/PatientPageComponents/PatientTreatmentFor.js",
+		"/Users/Zahaan/Documents/ReactProjectsTest4/medchain-react/src/js/components/PatientPageComponents/PatientRecentActivityList.js",
+		"/Users/Zahaan/Documents/ReactProjectsTest4/medchain-react/src/js/pages/PatientPage.js",
+		"/Users/Zahaan/Documents/ReactProjectsTest4/medchain-react/src/js/App.js"
+	],
+	"find":
+	{
+		"height": 40.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "yarn.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 301.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

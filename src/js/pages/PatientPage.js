@@ -20,9 +20,7 @@ class PatientPage extends Component {
 	}
 
 	onButtonClick = () => {
-		// console.log(this.props);
 		this.props.SaveToFirebase(this.props);
-		// console.log(this.props);
 	}
 
 	// componentWillReceiveProps = (nextProps) => {

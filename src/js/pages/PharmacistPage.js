@@ -5,7 +5,8 @@ import { connect } from 'react-redux';
 import * as actions from '../actions';
 
 import PharmacyHeading from '../components/PharmacistPageComponents/PharmacyHeading';
-import Details from '../components/PharmacistPageComponents/Details';
+import CompanyDetails from '../components/PharmacistPageComponents/CompanyDetails';
+import CustomerDetails from '../components/PharmacistPageComponents/CustomerDetails';
 import Products from '../components/PharmacistPageComponents/Products';
 import Comments from '../components/PharmacistPageComponents/Comments';
 import Payment from '../components/PharmacistPageComponents/Payment';
@@ -20,7 +21,9 @@ class PharmacistPage extends Component {
 		return(
 			<div className='container'>
 				<PharmacyHeading />
-				<Details name={this.props.name} age={this.props.age}/><br/>
+				<CompanyDetails />
+				<CustomerDetails name={this.props.name} age={this.props.age} address={this.props.address}
+					 phone={this.props.phone} email={this.props.email} /><br/>
 				<Products /><br/>
 				<Comments /><br/>
 				<Payment /><br/>

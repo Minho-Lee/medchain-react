@@ -10,6 +10,8 @@ import { Button,
 
 import { store } from '../stores/store';
 import * as actions from '../actions';
+import { Link } from 'react-router-dom';
+
 
 // import { bindActionCreators } from 'redux';
 
@@ -73,6 +75,9 @@ class DoctorPage extends Component {
 					</FormGroup>
 					<Button type="submit">Submit To Pharmacist</Button>
 				</Form>
+				<Link to='/pharmacist'>
+					<Button onClick={this.onButtonClick}>See a Pharmacist</Button>
+				</Link>
 			</div>
 		);
 	}
