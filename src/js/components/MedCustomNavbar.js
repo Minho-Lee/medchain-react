@@ -6,13 +6,15 @@ import {
 	NavbarBrand,
 	Nav,
 	NavItem,
-	NavLink } from 'reactstrap';
+	NavLink } from 'reactstrap'; 
 
 export default class MedCustomNavBar extends Component {
 	constructor(props) {
 		super(props);
 
 		this.toggle = this.toggle.bind(this);
+		this.getActiveState = this.getActiveState.bind(this);
+		
 		this.state = {
 			isOpen: false
 		}
@@ -24,6 +26,10 @@ export default class MedCustomNavBar extends Component {
 		});
 	}
 
+	getActiveState() {
+		return this.props.location.pathname;
+	}
+
 	render() {
 		return (
 			<div>
@@ -33,13 +39,13 @@ export default class MedCustomNavBar extends Component {
 					<Collapse isOpen={this.state.isOpen} navbar>
 						<Nav className="ml-auto" navbar>
 							<NavItem>
-								<NavLink disabled href='patient'>Patient</NavLink>
+								<NavLink className={(this.getActiveState() === '/patient') ? "active" : "disabled" }>Patient</NavLink>
 							</NavItem>
 							<NavItem>
-								<NavLink disabled href="pharmacist">Pharmacist</NavLink>
+								<NavLink className={(this.getActiveState() === '/doctor') ? "active" : "disabled" }>Doctor</NavLink>
 							</NavItem>
 							<NavItem>
-								<NavLink disabled href="doctor">Doctor</NavLink>
+								<NavLink className={(this.getActiveState() === '/pharmacist') ? "active" : "disabled" }>Pharmacist</NavLink>
 							</NavItem>
 						</Nav>
 					</Collapse>

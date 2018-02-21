@@ -1,20 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export default class PresribedMedicine extends Component {
-	constructor(props) {
-		super(props);
-
-		this.state = {
-			MedicineName: this.props.med
-		}
-	}
-
-	render() {
-		console.log(this.state.MedicineName)
-		return (
-			<li>
-				<span> {this.state.MedicineName} </span>
-			</li>
-		);
-	}
+const PresribedMedicine = ({med}) => {
+	return (
+		<li>
+			<span> {med} </span>
+		</li>
+	);
 }
+
+export default PresribedMedicine;

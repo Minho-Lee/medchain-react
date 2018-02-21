@@ -5,7 +5,7 @@ import WelcomeSection from '../components/HomePageComponents/WelcomeSection';
 
 import '../../scss/HomePage.css'
 
-class HomePage extends Component {
+export default class HomePage extends Component {
 	render() {
 		return (
 			<div className="container">
@@ -15,5 +15,3 @@ class HomePage extends Component {
 		);
 	}
 }
-
-export { HomePage };

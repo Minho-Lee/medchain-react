@@ -16,8 +16,7 @@ class PatientPage extends Component {
 
 	// When the page loads, grab the default data and set it into props
 	componentDidMount = () => {
-		// console.log(this.props);
-		this.props.GetActivePatientData(1);
+		this.props.GetActivePatientData();
 	}
 
 	onButtonClick = () => {
@@ -26,10 +25,17 @@ class PatientPage extends Component {
 		// console.log(this.props);
 	}
 
+	// componentWillReceiveProps = (nextProps) => {
+	// 	console.log(nextProps);
+	// }
+
+	// componentWillUnmount = () => {
+	// 	this.firebase.off();
+	// }
+
 	render() {
-		// console.log(this.props);
 		return (
-			<div className="container">
+			<div>
 				<PatientName name={this.props.name} age={this.props.age} occupation={this.props.occupation}/>
 				<PatientMetaData address={this.props.address} phone={this.props.phone} email={this.props.email}/>
 				<PatientPrescribedMedicines medPrescribed={this.props.medPrescribed}/>

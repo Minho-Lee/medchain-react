@@ -1,21 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export default class RecentActivity extends Component {
-	constructor(props) {
-		super(props);
-
-		this.state = {
-			date: this.props.date,
-			comment: this.props.comment
-		}
-	}
-
-	render() {
-		return (
-			<li>
-				<span><b>{this.state.date}</b></span>
-				<span> {this.state.comment} </span>
-			</li>
-		);
-	}
+const RecentActivity = ({date, comment}) => {
+	return (
+		<li>
+			<span><b>{date}</b></span>
+			<span> {comment} </span>
+		</li>
+	);
 }
+
+export default RecentActivity;

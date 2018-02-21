@@ -11,6 +11,12 @@ export default class PatientRecentActivity extends Component {
 		}
 	}
 
+	componentWillReceiveProps = (nextProps) => {
+		this.setState({
+			recentActivities: nextProps.recentActivities
+		});
+	}
+
 	render() {
 		return (
 			<div className="container">

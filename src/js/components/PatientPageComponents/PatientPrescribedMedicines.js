@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 import PatientPrescribedMedicineList from './PatientPrescribedMedicineList';
 
-
 export default class PatientPrescribedMedicines extends Component {
 	constructor(props) {
 		super(props);
@@ -12,9 +11,15 @@ export default class PatientPrescribedMedicines extends Component {
 		}
 	}
 
+	componentWillReceiveProps = (nextProps) => {
+		this.setState({
+				medPrescribed: nextProps.medPrescribed 
+		});	
+	}
+
 	render() {
 		return (
-			<div className="container">
+			<div>
 				<h1>Patient Prescribed Medicines </h1>
 				<PatientPrescribedMedicineList medPrescribed={this.state.medPrescribed}/>
 			</div>

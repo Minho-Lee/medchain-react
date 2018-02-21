@@ -12,6 +12,14 @@ export default class PatientRecentActivityList extends Component {
 		}
 	}
 
+	componentWillReceiveProps = (nextProps) => {
+		if (nextProps.recentActivities) {
+			this.setState({
+				recentActivities: nextProps.recentActivities
+			});
+		}
+	}
+
 	render() {
 
 		const recentActivityComponents = this.state.recentActivities.map((recentActivity) => {
