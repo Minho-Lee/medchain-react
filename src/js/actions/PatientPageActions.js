@@ -47,7 +47,6 @@ const GetActivePatientDataFail= (dispatch) => {
 export const SaveToFirebase = ({name, age, occupation, address, phone, email,
 																medPrescribed, recentActivities}) => {
 	const { currentUser } = firebase.auth();
-	console.log(currentUser);
 
 	// var a = 'f5BupJmEkYhQ93DNZt7XWrr8rW22';
 	// var name = 'Zahaan Khan';

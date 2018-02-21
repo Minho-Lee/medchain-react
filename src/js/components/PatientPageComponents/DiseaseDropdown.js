@@ -45,7 +45,6 @@ class DiseaseDropdown extends Component {
 	render() {
 		return(
 			<div>
-				<h1>Doctor Page!</h1>
 				<Form onSubmit={this.handleSubmit}>
 					<FormGroup>
 						<Label for="PatientDiseases">Needs Treatement For: </Label>
