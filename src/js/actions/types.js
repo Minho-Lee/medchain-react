@@ -6,5 +6,6 @@ export const GET_ACTIVE_PATIENT_DATA_SUCCESS = 'get_active_patient_data_success'
 export const GET_ACTIVE_PATIENT_DATA_FAIL = 'get_active_patient_data_fail';
 export const USER_CHANGED = 'user_changed';
 export const PASSWORD_CHANGED = 'password_changed';
-export const POST_DOCTOR_PERSCRIPTION = 'post_doctor_prescription';
+export const SAVE_DOCTOR_PERSCRIPTION = 'save_doctor_prescription';
+export const SAVE_PATIENT_DISEASE = 'save_patient_disease';
 export const SAVE_PATIENT_DATA = 'save_patient_data';

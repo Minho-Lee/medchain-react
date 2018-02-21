@@ -5,9 +5,7 @@ import {
 	SAVE_PATIENT_DATA
 } from '../actions/types';
  
- 
-// TODO: Get this inital state from DB, maybe make it a list of patients you can choose from
-const INIT_STATE = {
+ const INIT_STATE = {
   name: "",
   id: 0,
   age: 0,
@@ -22,32 +20,53 @@ const INIT_STATE = {
  
 export default (state=INIT_STATE, action) => { 
   switch (action.type) { 
-    case GET_ACTIVE_PATIENT_DATA: { 
+    case GET_ACTIVE_PATIENT_DATA: {
+      // TODO: Possibly add loading feature here 
       return { payload: action.payload } 
     } 
 
     case GET_ACTIVE_PATIENT_DATA_SUCCESS: {
       let patientInfo = {};
 
-
-      Object.keys(action.payload).map((key) => {
-        var item = action.payload[key];
-
-        Object.keys(item).map((key2) => {
-          var item2 = item[key2]
+      // setup Patient Info
+      var patInfo = action.payload.PatientInfo;
+      for(let key in patInfo) {
           patientInfo = {
-            name: key,
-            id: key2,
-            age: item2.age,
-            occupation: item2.occupation,
-            address: item2.address,
-            phone: item2.phone,
-            email: item2.email,
-            medPrescribed: item2.medPrescribed,
-            recentActivities: item2.recentActivities
-          }
-        });
-    });
+          name: patInfo[key].name,
+          age: patInfo[key].age,
+          occupation: patInfo[key].occupation,
+          address: patInfo[key].address,
+          phone: patInfo[key].phone,
+          email: patInfo[key].email
+        }
+      }
+
+      // setup MedPrescribed
+      var medPrescribed = action.payload.MedPrescribed;
+      var medPrescribedList = [];
+      for(let key in medPrescribed) {
+        medPrescribed[key]['id'] = key;
+        medPrescribedList.push(medPrescribed[key]);
+      }
+      patientInfo['medPrescribed'] = medPrescribedList;
+
+      // setup Diseases
+      var dis = action.payload.Diseases;
+      var disList = [];
+      for(let key in dis) {
+        dis[key]['id'] = key;
+        disList.push(dis[key]);
+      }
+      patientInfo['diseases'] = disList;
+
+      // TODO: setup Recent Activity
+      // var recAct = action.payload.RecentActivities;
+      // var recActList = [];
+      // for(let key in recAct) {
+      //   recAct[key]['id'] = key;
+      //   recActList.push(recAct[key]);
+      // }
+      // patientInfo['recentActivities'] = recActList;
 
 
     return { ...state, ...patientInfo }

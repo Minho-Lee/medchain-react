@@ -1,54 +1,73 @@
 import React, { Component } from 'react';
-import Dropdown from 'react-dropdown';
 
-export default class DiseaseDropdown extends Component {
+import { connect } from 'react-redux';
+import { push } from 'react-router-redux';
+import { Button, 
+		 Form, 
+		 FormGroup, 
+		 Label, 
+		 Input
+ } from 'reactstrap';
+
+import { store } from '../../stores/store';
+import * as actions from '../../actions/PatientPageActions';
+
+class DiseaseDropdown extends Component {
 
 	constructor() {
 		super();
 
-		//dummy data
-		this.state = {
-			diseaseOptions: [ 
-				{
-					type: 'TypeA', name: 'Type A Medical Conditions', items: [
-						{
-							id: 1,
-							disease: "Hepatitis"
-						},
-						{
-							id: 2,
-							disease: "Hypothyroidism"
-						}
-					]
-				},
-				{
-					type: 'TypeB', name: "Type B Medical Conditions", items: [
-							{
-								id: 3,
-								disease: "Diabetes"
-							}
-					]
-				}
+		this.handleSubmit = this.handleSubmit.bind(this);
+		this.onSelectedDiseaseChange = this.onSelectedDiseaseChange.bind(this);
 
-			],
-			selectedDisease: null
+		this.state = {
+			disease: 'Hepatitis'
 		}
 	}
 
-	onDiseaseSelection(val) {
-		console.log(val);
+	handleSubmit(event) {
+		event.preventDefault();
+		const data = {
+			disease: this.state.disease
+		}
+		this.props.SavePatientDisease({...data});
+		store.dispatch(push('/doctor'));
+	}
+
+	onSelectedDiseaseChange(event) {
+		event.preventDefault();
+		this.setState({
+			disease: event.target.value 
+		});
 	}
 
 
 	render() {
 		return(
-			<Dropdown options={this.state.diseaseOptions}
-				defaultValue={this.state.selectedDisease}
-				menuClassName="dropdown-input"
-				onSelect={this.onDiseaseSelection.bind(this)}
-				placeholder="Please Choose" />
+			<div>
+				<h1>Doctor Page!</h1>
+				<Form onSubmit={this.handleSubmit}>
+					<FormGroup>
+						<Label for="PatientDiseases">Needs Treatement For: </Label>
+						<Input type="select" name="selectedDisease" id="selectedDisease" onChange={this.onSelectedDiseaseChange}>
+							<option value="Hepatitis">Hepatitis</option>
+							<option value="Hypothyroidism">Hypothyroidism</option>
+							<option value="Depression">Depression</option>
+							<option value="ACL TEAR">ACL Tear</option>
+						</Input>
+					</FormGroup>
+					<Button type="submit">Submit Disease</Button>
+				</Form>
+			</div>
 		);
 	}
-
-
 }
+
+
+const bindActionsToDispath = (dispatch) => (
+	{
+		SavePatientDisease: (disease) => dispatch(actions.SavePatientDisease(disease))
+	}
+);
+
+export default connect(null, bindActionsToDispath)(DiseaseDropdown);

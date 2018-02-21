@@ -35,7 +35,7 @@ class DoctorPage extends Component {
 			docCom: this.state.doctorComment
 		};
 
-		this.props.PostDoctorPrescription({...data});
+		this.props.SaveDoctorPrescription({...data});
 		store.dispatch(push('/pharmacist'));
 	}
 
@@ -93,7 +93,7 @@ class DoctorPage extends Component {
 
 const bindActionsToDispath = (dispatch) => (
 	{
-		PostDoctorPrescription: (data) => dispatch(actions.PostDoctorPrescription(data))
+		SaveDoctorPrescription: (data) => dispatch(actions.SaveDoctorPrescription(data))
 	}
 );
 

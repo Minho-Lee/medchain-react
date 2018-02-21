@@ -1,9 +1,9 @@
 import React from 'react';
 
-const PresribedMedicine = ({med}) => {
+const PresribedMedicine = ({medPrescribed}) => {
 	return (
 		<li>
-			<span> {med} </span>
+			<span> {medPrescribed} </span>
 		</li>
 	);
 }
