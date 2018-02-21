@@ -2,20 +2,23 @@ import firebase from 'firebase';
 
 export const SaveDoctorPrescription = ({selMed, docCom}) => {
 	return (dispatch) => {
-		var today = new Date();
-		var dd = today.getDate();
-		var mm = today.getMonth() + 1;
-		var yy = today.getFullYear();
-
-		today = dd + '/' + mm + '/' + yy;
+		var today = new Date().toJSON().slice(0,10).replace(/-/g,'/');
 
 		const { currentUser } = firebase.auth();
-		const dbRef = firebase.database().ref('users').child(currentUser.uid).child('MedPrescribed');
+		const dbRefDisease = firebase.database().ref('users').child(currentUser.uid).child('MedPrescribed');
+		const dbRefRecAct = firebase.database().ref('users').child(currentUser.uid).child('RecentActivity');
 
-		dbRef.push({
+
+		dbRefDisease.push({
 			medPrescribed: selMed,
 			doctorComments: docCom,
 			date: today
 		});
+
+		dbRefRecAct.push({
+			comment: "Appointment Booked: " + docCom,
+			date: today
+		});
+
 	}
 };
