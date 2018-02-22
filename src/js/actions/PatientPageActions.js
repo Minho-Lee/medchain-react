@@ -13,7 +13,7 @@ export const GetActivePatientData = () => {
 			type: GET_ACTIVE_PATIENT_DATA
 		});
 
-		console.log('dispathed: GET_ACTIVE_PATIENT_DATA');
+		console.log('dispatched: GET_ACTIVE_PATIENT_DATA');
 
 		const db = firebase.database();
 		const { currentUser } = firebase.auth();
@@ -28,7 +28,7 @@ export const GetActivePatientData = () => {
 }
 
 const GetActivePatientDataSuccess = (dispatch, user) => {
-	console.log('dispathed: GET_ACTIVE_PATIENT_DATA_SUCCESS');
+	console.log('dispatched: GET_ACTIVE_PATIENT_DATA_SUCCESS');
 
 	dispatch({
 		type: GET_ACTIVE_PATIENT_DATA_SUCCESS,
@@ -37,7 +37,7 @@ const GetActivePatientDataSuccess = (dispatch, user) => {
 }
 
 const GetActivePatientDataFail= (dispatch) => {
-	console.log('dispathed: GET_ACTIVE_PATIENT_DATA_FAIL');
+	console.log('dispatched: GET_ACTIVE_PATIENT_DATA_FAIL');
 	dispatch({
 		type: GET_ACTIVE_PATIENT_DATA_FAIL,
 		payload: "Error: Could not retrive patient data",
