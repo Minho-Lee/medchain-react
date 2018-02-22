@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 
-import './scss/index.css';
+import './scss/index.scss';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'react-activity/dist/react-activity.css';
 
