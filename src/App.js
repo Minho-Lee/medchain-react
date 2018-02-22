@@ -20,7 +20,7 @@ class App extends Component {
 
 	componentWillMount() {
 		// Initialize Firebase
-		var config = {
+		const config = {
 			apiKey: "AIzaSyBUCOFyhr4HnDC96_G8bUaSpQQ-xCxpT7E",
 			authDomain: "medchain-react.firebaseapp.com",
 			databaseURL: "https://medchain-react.firebaseio.com",

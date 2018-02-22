@@ -21,7 +21,7 @@ export const loginUser = ({ userid, password }) => {
 		firebase.auth().signInWithEmailAndPassword(userid, password)
 			.then((user) => {
 				// console.log(user);
-				loginUserSuccess(dispatch, user);
+				loginUserSuccess(dispatch, user);	
 			})
 			.catch((error) => {
 				// For now, only going to be dealing with users that are already registered.
@@ -38,13 +38,13 @@ export const loginUser = ({ userid, password }) => {
 		);
 
 		// authentication listner to handle page refresh, login/logout
-		firebase.auth().onAuthStateChanged(firebaseUser => {
-			if(firebaseUser) {
-				console.log(firebaseUser);
-			} else {
-				console.log("Not logged in anymore");
-			}
-		});
+		// firebase.auth().onAuthStateChanged(firebaseUser => {
+		// 	if(firebaseUser) {
+		// 		console.log(firebaseUser);
+		// 	} else {
+		// 		console.log("Not logged in anymore");
+		// 	}
+		// });
 	}
 };
 

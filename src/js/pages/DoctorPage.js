@@ -10,6 +10,8 @@ import { Button,
 
 import { store } from '../stores/store';
 import * as actions from '../actions';
+import { Link } from 'react-router-dom';
+
 
 // import { bindActionCreators } from 'redux';
 
@@ -35,7 +37,7 @@ class DoctorPage extends Component {
 			docCom: this.state.doctorComment
 		};
 
-		this.props.SaveDoctorPrescription({...data});
+		this.props.SaveDoctorPrescription({...data}, this.props.user);
 		store.dispatch(push('/pharmacist'));
 	}
 
@@ -73,6 +75,9 @@ class DoctorPage extends Component {
 					</FormGroup>
 					<Button type="submit">Submit To Pharmacist</Button>
 				</Form>
+				<Link to='/pharmacist'>
+					<Button onClick={this.onButtonClick}>See a Pharmacist</Button>
+				</Link>
 			</div>
 		);
 	}
@@ -89,7 +94,11 @@ class DoctorPage extends Component {
  // 	return bindActionCreators(actions, dispatch);
  // };
 
-
+const mapStateToProps = ( state ) => {
+	return {
+		user: state.auth.user,
+	}
+}
 
 const bindActionsToDispath = (dispatch) => (
 	{
@@ -97,4 +106,4 @@ const bindActionsToDispath = (dispatch) => (
 	}
 );
 
-export default connect(null, bindActionsToDispath)(DoctorPage);
+export default connect(mapStateToProps, bindActionsToDispath)(DoctorPage);

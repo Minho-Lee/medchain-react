@@ -30,7 +30,7 @@ class DiseaseDropdown extends Component {
 		const data = {
 			disease: this.state.disease
 		}
-		this.props.SavePatientDisease({...data});
+		this.props.SavePatientDisease({...data}, this.props.user);
 		store.dispatch(push('/doctor'));
 	}
 
@@ -45,7 +45,6 @@ class DiseaseDropdown extends Component {
 	render() {
 		return(
 			<div>
-				<h1>Doctor Page!</h1>
 				<Form onSubmit={this.handleSubmit}>
 					<FormGroup>
 						<Label for="PatientDiseases">Needs Treatement For: </Label>
@@ -63,6 +62,11 @@ class DiseaseDropdown extends Component {
 	}
 }
 
+const mapStateToProps = ( state ) => {
+	return {
+		user: state.auth.user,
+	}
+}
 
 const bindActionsToDispath = (dispatch) => (
 	{
@@ -70,4 +74,4 @@ const bindActionsToDispath = (dispatch) => (
 	}
 );
 
-export default connect(null, bindActionsToDispath)(DiseaseDropdown);
+export default connect(mapStateToProps, bindActionsToDispath)(DiseaseDropdown);

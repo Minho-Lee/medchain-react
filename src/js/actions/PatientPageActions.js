@@ -8,24 +8,36 @@ import {
 
 
 export const GetActivePatientData = () => {
+	console.log('dispatched: GET_ACTIVE_PATIENT_DATA');
 	return (dispatch) => {
 		dispatch({
-			type: GET_ACTIVE_PATIENT_DATA
+			type: GET_ACTIVE_PATIENT_DATA,
 		});
 
-		console.log('dispatched: GET_ACTIVE_PATIENT_DATA');
+		firebase.auth().onAuthStateChanged((user) => {
+			console.log('onAuthStateChanged Triggered!');
+			if (user) {
+				console.log('STILL LOGGED IN');
+				// console.log(user);
 
-		const db = firebase.database();
-		const { currentUser } = firebase.auth();
-		const dbUserInfoRef = db.ref('users').child(currentUser.uid);
+				const db = firebase.database();
+				const currentUser = user;
+				// console.log(currentUser.uid);
+				const dbUserInfoRef = db.ref('users').child(currentUser.uid);
 
-		dbUserInfoRef.once('value', snapshot => {
-			GetActivePatientDataSuccess(dispatch, snapshot.val());
-		}).catch((error) => {
-			GetActivePatientDataFail(dispatch);
-		});
+				dbUserInfoRef.once('value', snapshot => {
+					GetActivePatientDataSuccess(dispatch, snapshot.val());
+				}).catch((error) => {
+					GetActivePatientDataFail(dispatch);
+				});
+			}
+			else {
+				console.log('NOT LOGGED IN ');
+			}
+		})
 	}
 }
+	
 
 const GetActivePatientDataSuccess = (dispatch, user) => {
 	console.log('dispatched: GET_ACTIVE_PATIENT_DATA_SUCCESS');
@@ -47,7 +59,6 @@ const GetActivePatientDataFail= (dispatch) => {
 export const SaveToFirebase = ({name, age, occupation, address, phone, email,
 																medPrescribed, recentActivities}) => {
 	const { currentUser } = firebase.auth();
-	console.log(currentUser);
 
 	// var a = 'f5BupJmEkYhQ93DNZt7XWrr8rW22';
 	// var name = 'Zahaan Khan';
@@ -77,8 +88,8 @@ export const SaveToFirebase = ({name, age, occupation, address, phone, email,
 	}
 }
 
-export const SavePatientDisease = ({disease}) => {
-	const { currentUser } = firebase.auth();
+export const SavePatientDisease = ({disease}, user) => {
+	const { currentUser } = user;
 	console.log(currentUser);
 
 	var today = new Date().toJSON().slice(0,10).replace(/-/g,'/');
