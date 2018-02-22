@@ -13,6 +13,7 @@ const INIT_STATE = {
 	password: '',
 	loggedIn: false,
 	loading: false,
+	currentUser_uid: '',
 }
 
 export default (state=INIT_STATE, action) => {
@@ -28,6 +29,7 @@ export default (state=INIT_STATE, action) => {
 			return { ...state, password: action.payload }
 		}
 		case LOGIN_USER_SUCCESS: {
+			console.log("LOGIN USER SUCCESS!!!");
 			return { ...state,
 								// this is to clear out cached info on Redux app state so it doesn't store info
 								...INIT_STATE,

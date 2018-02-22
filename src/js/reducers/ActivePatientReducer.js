@@ -14,18 +14,20 @@ import {
   phone: "",
   email: "",
   medPrescribed: [], 
-  recentActivities: []
- 
+  recentActivities: [],
+  user: null,
 } 
  
 export default (state=INIT_STATE, action) => { 
   switch (action.type) { 
     case GET_ACTIVE_PATIENT_DATA: {
+    	console.log('GET_ACTIVE_PATIENT_DATA');
       // TODO: Possibly add loading feature here 
-      return { payload: action.payload } 
+      return { ...state } 
     } 
 
     case GET_ACTIVE_PATIENT_DATA_SUCCESS: {
+    	console.log('GET_ACTIVE_PATIENT_DATA_SUCCESS');
       let patientInfo = {};
 
       // setup Patient Info

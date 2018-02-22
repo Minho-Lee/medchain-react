@@ -15,7 +15,7 @@ import { Button } from 'reactstrap';
 class PatientPage extends Component {
 
 	// When the page loads, grab the default data and set it into props
-	componentDidMount = () => {
+	componentWillMount = () => {
 		this.props.GetActivePatientData();
 	}
 
@@ -49,6 +49,7 @@ class PatientPage extends Component {
 }
 
 const mapStateToProps = (state) => {
+	console.log(state);
 	return {
 		id: state.activePat.id,
 		name: state.activePat.name,
