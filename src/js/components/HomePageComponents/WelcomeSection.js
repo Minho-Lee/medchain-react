@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import McLogo from '../../../images/mclight-logo.png';
 
-import '../../../scss/HomePage.css'
-
-
 export default class WeclomeSection extends Component {
 	render() {
 		return (

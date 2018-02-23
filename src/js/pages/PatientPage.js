@@ -10,6 +10,8 @@ import PatientRecentActivity from '../components/PatientPageComponents/PatientRe
 
 import * as actions from '../actions';
 
+import '../../scss/PatientPage.css';
+
 import { Button } from 'reactstrap';
 
 class PatientPage extends Component {
@@ -37,11 +39,12 @@ class PatientPage extends Component {
 				<PatientName name={this.props.name} age={this.props.age} occupation={this.props.occupation}/>
 				<PatientMetaData address={this.props.address} phone={this.props.phone} email={this.props.email}/>
 				<PatientPrescribedMedicines medPrescribed={this.props.medPrescribed}/>
-				<PatientTreatmentFor />
 				<PatientRecentActivity recentActivities={this.props.recentActivities}/>
-				<Link to='/doctor'>
+				<PatientTreatmentFor />
+
+				{/*<Link to='/doctor'>
 					<Button onClick={this.onButtonClick}>See a Doctor</Button>
-				</Link>
+				</Link>*/}
 			</div>
 		);
 	}

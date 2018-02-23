@@ -19,8 +19,8 @@ export default class PatientRecentActivity extends Component {
 
 	render() {
 		return (
-			<div className="container">
-				<h1>Patient Recent Activity: </h1>
+			<div className="container patient-data">
+				<h3 className="patient-info-header">Patient Recent Activity: </h3>
 				<PatientRecentActivityList recentActivities={this.state.recentActivities}/>
 			</div>
 		);

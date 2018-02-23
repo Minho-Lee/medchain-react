@@ -10,10 +10,12 @@ import { Button,
 
 import { store } from '../stores/store';
 import * as actions from '../actions';
+
+import PatientName from '../components/PatientPageComponents/PatientName';
+import PatientMetaData from '../components/PatientPageComponents/PatientMetaData';
 import { Link } from 'react-router-dom';
 
-
-// import { bindActionCreators } from 'redux';
+import '../../scss/PatientPage.css';
 
 class DoctorPage extends Component {
 	constructor(props) {
@@ -58,10 +60,12 @@ class DoctorPage extends Component {
 	render() {
 		return(
 			<div>
-				<h1>Doctor Page!</h1>
-				<Form onSubmit={this.handleSubmit}>
+				<PatientName name={this.props.name} age={this.props.age} occupation={this.props.occupation}/>
+				<PatientMetaData address={this.props.address} phone={this.props.phone} email={this.props.email}/>
+
+				<Form className="container" onSubmit={this.handleSubmit}>
 					<FormGroup>
-						<Label for="doctorPrescribedMedicine">Prescription</Label>
+						<h3 className="patient-info-header">Prescription</h3>
 						<Input type="select" name="selectedMedicine" id="selectedMedicine" onChange={this.onSelectedMedicineChange}>
 							<option value="Levothyroxine">Levothyroxine</option>
 							<option value="ACE Inhibitor">ACE Inhibitor</option>
@@ -70,40 +74,36 @@ class DoctorPage extends Component {
 						</Input>
 					</FormGroup>
 					<FormGroup>
-						<Label for="doctorComments">Doctor Comments: </Label>
+						<h3 className="patient-info-header">Doctor Comments: </h3>
 						<Input type="textarea" name="doctorComment" id="doctorComment" onChange={this.onDoctorCommentChange} />
 					</FormGroup>
-					<Button type="submit">Submit To Pharmacist</Button>
+					<Button className="submitToDoctor"  type="submit">Submit To Pharmacist</Button>
 				</Form>
-				<Link to='/pharmacist'>
+				{/*<Link to='/pharmacist'>
 					<Button onClick={this.onButtonClick}>See a Pharmacist</Button>
-				</Link>
+				</Link>*/}
 			</div>
 		);
 	}
 }
 
-/*
-
- TODO: I found 2 ways of doing this, not sure which way is better
-// https://medium.com/mofed/reduxs-mysterious-connect-function-526efe1122e4
-
-*/
-
- // const mapDispatchToProps = (dispatch) => {
- // 	return bindActionCreators(actions, dispatch);
- // };
-
 const mapStateToProps = ( state ) => {
 	return {
 		user: state.auth.user,
+		id: state.activePat.id,
+		name: state.activePat.name,
+		age: state.activePat.age,
+		occupation: state.activePat.occupation,
+		address: state.activePat.address,
+		phone: state.activePat.phone,
+		email: state.activePat.email
 	}
 }
 
-const bindActionsToDispath = (dispatch) => (
-	{
-		SaveDoctorPrescription: (data) => dispatch(actions.SaveDoctorPrescription(data))
-	}
-);
+// const bindActionsToDispath = (dispatch) => (
+// 	{
+// 		SaveDoctorPrescription: (data) => dispatch(actions.SaveDoctorPrescription(data))
+// 	}
+// );
 
-export default connect(mapStateToProps, bindActionsToDispath)(DoctorPage);
+export default connect(mapStateToProps, actions)(DoctorPage);
