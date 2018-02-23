@@ -30,7 +30,7 @@ class DiseaseDropdown extends Component {
 		const data = {
 			disease: this.state.disease
 		}
-		this.props.SavePatientDisease({...data}, this.props.user);
+		this.props.SavePatientDisease({...data});
 		store.dispatch(push('/doctor'));
 	}
 
