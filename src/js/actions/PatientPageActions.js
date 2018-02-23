@@ -88,8 +88,8 @@ export const SaveToFirebase = ({name, age, occupation, address, phone, email,
 	}
 }
 
-export const SavePatientDisease = ({disease}, user) => {
-	const { currentUser } = user;
+export const SavePatientDisease = ({disease}) => {
+	const { currentUser } = firebase.auth();
 	console.log(currentUser);
 
 	var today = new Date().toJSON().slice(0,10).replace(/-/g,'/');
