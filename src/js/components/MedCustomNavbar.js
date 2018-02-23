@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import '../../scss/Navbar.css';
-
 import {
 	Collapse,
 	Navbar,
@@ -35,11 +33,8 @@ export default class MedCustomNavBar extends Component {
 	render() {
 		return (
 			<div>
-				<Navbar className="navbar-body" fixed="top" dark expand="md">
-					<NavbarBrand href="home">
-						<span class="color-one">med</span>
-						<span class="color-two">chain</span>
-					</NavbarBrand>
+				<Navbar color="faded" light expand="md">
+					<NavbarBrand href="home">reactstrap</NavbarBrand>
 					<NavbarToggler onClick={this.toggle} />
 					<Collapse isOpen={this.state.isOpen} navbar>
 						<Nav className="ml-auto" navbar>

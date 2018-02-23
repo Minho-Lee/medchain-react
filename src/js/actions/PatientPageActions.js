@@ -18,9 +18,11 @@ export const GetActivePatientData = () => {
 			console.log('onAuthStateChanged Triggered!');
 			if (user) {
 				console.log('STILL LOGGED IN');
+				// console.log(user);
 
 				const db = firebase.database();
 				const currentUser = user;
+				// console.log(currentUser.uid);
 				const dbUserInfoRef = db.ref('users').child(currentUser.uid);
 
 				dbUserInfoRef.once('value', snapshot => {
@@ -56,7 +58,7 @@ const GetActivePatientDataFail= (dispatch) => {
 
 export const SaveToFirebase = ({name, age, occupation, address, phone, email,
 																medPrescribed, recentActivities}) => {
-	// const { currentUser } = firebase.auth();
+	const { currentUser } = firebase.auth();
 
 	// var a = 'f5BupJmEkYhQ93DNZt7XWrr8rW22';
 	// var name = 'Zahaan Khan';

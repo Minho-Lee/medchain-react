@@ -5,103 +5,6 @@
 	Kobi: #E48EA1;
 */
 
-.patient-page-section {
-	margin-bottom: 40px;
-}
-
-.patient-info-header {
-	font-weight: 900;
-    text-shadow: 0.8px 0;
-}
-
-.drugs ul {
-    list-style-type: none;
-/*    margin-top: 2em;
-*/    margin-left: 1em;
-    width: 65%;
-}
-
-.drugs ul li {
-    font: 200 1.5em/1.5 Roboto, sans-serif;
-    border-bottom: 1px solid #ccc;
-}
-
-.activity-list {
-    list-style-type: none;
-/*    margin-top: 2em;
-*/    font-size: 1.2em;
-}
-
-.submitToDoctor {
-    background-color: #F33259;
-    color: #fff;
-    border: solid red 0.2px;
-    border-radius: 1em;
-    width: 12em;
-    height: 3em;
-    transition: all 0.5s ease-in;
-    text-align: center;
-}
-
-.personal-info {
-    height: 100px;
-    background-color: #000;
-    color: #fff;
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.personal-info-metaData {
-	position: relative;
-    top: 32%;
-    left: 5%;
-    width: 33%;
-}
-
-.faIcon {
-	font-size: 2em;
-}
-
-.metaData {
-	float: left;
-	margin-right: 12px;
-}
-
-.header-section {
-	color: #fff;
-	background-color: #464646;
-	height: 175px;
-}
-
-.patient-data {
-	margin-bottom: 50px;
-}
-
-.header-section div {
-	margin-left: 15px;
-}
-
-.patient-name {
-	position: relative;
-	float: left;
-	top: 60px;
-	margin: 5px;
-}
-
-.face-picture {
-	position: relative;
-	float: left;
-	top: 30px;
-	margin: 5px;
-}
-.face-picture img {
-	width: 110px;
-	height: 110px;
-}
-
-
-/* Other shit ---------------- */
-
 .jumbotron {
 		background-color: #fdd600;
 		padding-top: 128px;
@@ -290,7 +193,6 @@
 }
 
 body {
-	padding-top: 50px;
 	font-family: 'Roboto', sans-serif;
 	color: #323232;
 }
@@ -397,17 +299,17 @@ body {
 	padding-right: 3em;
 	padding-left: 3em;
 }
-#section2:before {
+/*#section2:before {
 	content: "";
-/*	background: url('../images/phone-pic-2.png') no-repeat;
-*/	background-size: cover;
+	background: url('../images/phone-pic-2.png') no-repeat;
+	background-size: cover;
 	position: absolute;
 	top: 0;
 	left: 0;
 	height: 100%;
 	width: 100%;
 	z-index: -1;
-}
+}*/
 #section2 #login-title{
 	margin-top: 35%;
 	margin-left: 5%;
@@ -474,7 +376,18 @@ body {
 #patient-info-ejs {
 	font-family: 'Roboto', sans-serif;
 }
-
+#header-section {
+	color: #fff;
+	background-color: #464646;
+	height: 200px;
+}
+#face-picture {
+	position: relative;
+	top: 3.5em;
+}
+#face-picture img {
+	float: right;
+}
 
 #name-and-role {
 	position: relative;
