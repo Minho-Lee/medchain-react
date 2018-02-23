@@ -47,6 +47,7 @@ class DiseaseDropdown extends Component {
 			<div>
 				<Form onSubmit={this.handleSubmit}>
 					<FormGroup>
+						<Label for="PatientDiseases">Needs Treatement For: </Label>
 						<Input type="select" name="selectedDisease" id="selectedDisease" onChange={this.onSelectedDiseaseChange}>
 							<option value="Hepatitis">Hepatitis</option>
 							<option value="Hypothyroidism">Hypothyroidism</option>
@@ -54,7 +55,7 @@ class DiseaseDropdown extends Component {
 							<option value="ACL TEAR">ACL Tear</option>
 						</Input>
 					</FormGroup>
-					<Button className="submitToDoctor" type="submit">Submit Disease</Button>
+					<Button type="submit">Submit Disease</Button>
 				</Form>
 			</div>
 		);
