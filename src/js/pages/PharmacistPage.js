@@ -14,19 +14,31 @@ import Payment from '../components/PharmacistPageComponents/Payment';
 class PharmacistPage extends Component {
 	componentWillMount = () => {
 		// This sends in a request to fetch all data and set it to this.props through reducer prior to rendering
-		this.props.GetActivePatientData(1);
+		this.props.GetActivePatientData();
 	}
 
 	render() {
+		const { name, age, address, phone, email, occupation, medPrescribed, recentActivities } = this.props;
+
 		return(
-			<div className='container'>
+			<div className='container-fluid invoice'>
 				<PharmacyHeading />
-				<CompanyDetails />
-				<CustomerDetails name={this.props.name} age={this.props.age} address={this.props.address}
-					 phone={this.props.phone} email={this.props.email} /><br/>
-				<Products /><br/>
-				<Comments /><br/>
-				<Payment /><br/>
+				<div className='invoice-body'>
+					<div className='row'>
+						<div className='col-xs-5 col-sm-5'>
+							<CompanyDetails />
+						</div>
+						<div className='col-xs-7 col-sm-7'>
+							<CustomerDetails name={name} age={age} address={address}
+								phone={phone} email={email} />
+							</div>
+						</div>
+					<Products /><br/>
+				</div>
+				<div className='invoice-footer'>
+					<Comments /><br/>
+					<Payment /><br/>
+				</div>
 			</div>
 		);
 	}

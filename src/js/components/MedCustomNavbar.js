@@ -37,8 +37,8 @@ export default class MedCustomNavBar extends Component {
 			<div>
 		        <Navbar className="navbar-body" fixed="top" dark expand="md"> 
 		        	<NavbarBrand href="home"> 
-		            	<span class="color-one">med</span> 
-		        		<span class="color-two">chain</span> 
+		            	<span className="color-one">med</span> 
+		        		<span className="color-two">chain</span> 
 		        	</NavbarBrand> 
 					<NavbarToggler onClick={this.toggle} />
 					<Collapse isOpen={this.state.isOpen} navbar>

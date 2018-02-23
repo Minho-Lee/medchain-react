@@ -1,30 +1,23 @@
 import React from 'react';
+import { Card, CardTitle, CardBody, CardText } from 'reactstrap';
 
 const CustomerDetails = ({name, age, address, phone, email}) => {
 	return (
-		<div>
-			<h4>Customer Details</h4>
-			<div>
-				<span><b>Name</b></span>
-				<span> {name} </span>
-			</div>
-			<div>
-				<span><b>Age</b></span>
-				<span> {age} </span>
-			</div>
-			<div>
-				<span><b>Address</b></span>
-				<span> {address} </span>
-			</div>
-			<div>
-				<span><b>Phone</b></span>
-				<span> {phone} </span>
-			</div>
-			<div>
-				<span><b>Email</b></span>
-				<span> {email} </span>
-			</div>
-		</div>
+		<Card>
+			<CardTitle>Customer Details</CardTitle>
+			<dl className='dl-horizantal'>
+				<dt>Name</dt>
+				<dd>{name}</dd>
+				<dt>Age</dt>
+				<dd>{age}</dd>
+				<dt>Address</dt>
+				<dd>{address}</dd>
+				<dt>Phone</dt>
+				<dd>{phone}</dd>
+				<dt>Email</dt>
+				<dd>{email}</dd>
+			</dl>
+		</Card>
 	);
 }
 

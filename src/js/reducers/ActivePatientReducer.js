@@ -16,7 +16,6 @@ import {
   email: "",
   medPrescribed: [], 
   recentActivities: [],
-  user: null,
 } 
  
 export default (state=INIT_STATE, action) => { 
