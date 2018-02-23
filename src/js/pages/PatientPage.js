@@ -12,6 +12,8 @@ import * as actions from '../actions';
 
 import { Button } from 'reactstrap';
 
+import '../../scss/PatientPage.css'; 
+
 class PatientPage extends Component {
 
 	// When the page loads, grab the default data and set it into props
@@ -39,9 +41,9 @@ class PatientPage extends Component {
 				<PatientPrescribedMedicines medPrescribed={this.props.medPrescribed}/>
 				<PatientTreatmentFor />
 				<PatientRecentActivity recentActivities={this.props.recentActivities}/>
-				<Link to='/doctor'>
+				{/*<Link to='/doctor'>
 					<Button onClick={this.onButtonClick}>See a Doctor</Button>
-				</Link>
+				</Link>*/}
 			</div>
 		);
 	}

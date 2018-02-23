@@ -8,6 +8,8 @@ import {
 	NavItem,
 	NavLink } from 'reactstrap'; 
 
+import '../../scss/Navbar.css'; 
+
 export default class MedCustomNavBar extends Component {
 	constructor(props) {
 		super(props);
@@ -33,8 +35,11 @@ export default class MedCustomNavBar extends Component {
 	render() {
 		return (
 			<div>
-				<Navbar color="faded" light expand="md">
-					<NavbarBrand href="home">reactstrap</NavbarBrand>
+		        <Navbar className="navbar-body" fixed="top" dark expand="md"> 
+		        	<NavbarBrand href="home"> 
+		            	<span class="color-one">med</span> 
+		        		<span class="color-two">chain</span> 
+		        	</NavbarBrand> 
 					<NavbarToggler onClick={this.toggle} />
 					<Collapse isOpen={this.state.isOpen} navbar>
 						<Nav className="ml-auto" navbar>

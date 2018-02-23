@@ -55,7 +55,7 @@ class DiseaseDropdown extends Component {
 							<option value="ACL TEAR">ACL Tear</option>
 						</Input>
 					</FormGroup>
-					<Button type="submit">Submit Disease</Button>
+          			<Button className="submitToDoctor" type="submit">Submit Disease</Button> 
 				</Form>
 			</div>
 		);

@@ -27,7 +27,7 @@ export default class PatientPrescribedMedicineList extends Component {
 		});
 
 		return (
-			<div>
+      		<div className="drugs"> 
 				<ul>{medicinesPrescribedComponents}</ul>
 			</div>
 		);

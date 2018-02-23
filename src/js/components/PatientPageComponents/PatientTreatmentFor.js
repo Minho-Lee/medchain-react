@@ -5,8 +5,8 @@ import DiseaseDropdown from './DiseaseDropdown';
 export default class PatientTreatmentFor extends Component {
 	render() {
 		return (
-			<div className="container">
-				<h1>Patient Treatement For: </h1>
+	      <div className="container patient-data"> 
+	        <h3 className="patient-info-header">Needs Treatement For: </h3> 
 				<DiseaseDropdown />
 			</div>
 		);
