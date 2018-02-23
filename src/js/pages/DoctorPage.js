@@ -37,7 +37,7 @@ class DoctorPage extends Component {
 			docCom: this.state.doctorComment
 		};
 
-		this.props.SaveDoctorPrescription({...data}, this.props.user);
+		this.props.SaveDoctorPrescription({...data});
 		store.dispatch(push('/pharmacist'));
 	}
 
