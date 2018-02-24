@@ -4,7 +4,6 @@ import { push } from 'react-router-redux';
 import { Button, 
 		 Form, 
 		 FormGroup, 
-		 Label, 
 		 Input
  } from 'reactstrap';
 
@@ -13,11 +12,8 @@ import * as actions from '../actions';
 
 import PatientName from '../components/PatientPageComponents/PatientName'; 
 import PatientMetaData from '../components/PatientPageComponents/PatientMetaData'; 
-import { Link } from 'react-router-dom';
 
-import '../../scss/PatientPage.css'; 
-
-import { bindActionCreators } from 'redux';
+import '../../scss/PatDocPage.css'; 
 
 class DoctorPage extends Component {
 	constructor(props) {
@@ -32,6 +28,11 @@ class DoctorPage extends Component {
 			selectedMedicine: "Levothyroxine",
 			doctorComment: "",
 		};
+	}
+
+	// When the page loads, grab the default data and set it into props
+	componentDidMount = () => {
+		this.props.GetActivePatientData();
 	}
 
 	handleSubmit(event) {
@@ -62,28 +63,25 @@ class DoctorPage extends Component {
 	render() {
 		return(
 			<div>
-        <PatientName name={this.props.name} age={this.props.age} occupation={this.props.occupation}/> 
-        <PatientMetaData address={this.props.address} phone={this.props.phone} email={this.props.email}/> 
-        	<Form className="container" onSubmit={this.handleSubmit}> 
-					<FormGroup>
-            			<h3 className="patient-info-header">Prescription</h3> 
-						<Input type="select" name="selectedMedicine" id="selectedMedicine" onChange={this.onSelectedMedicineChange}>
-							<option value="Levothyroxine">Levothyroxine</option>
-							<option value="ACE Inhibitor">ACE Inhibitor</option>
-							<option value="Anti-Depressant">Anti-Depressant</option>
-							<option value="Insulin">Insulin</option>
-						</Input>
-					</FormGroup>
-					<FormGroup>
-            			<h3 className="patient-info-header">Doctor Comments: </h3> 
-						<Input type="textarea" name="doctorComment" id="doctorComment" onChange={this.onDoctorCommentChange} />
-					</FormGroup>
-         			<Button className="submitToDoctor"  type="submit">Submit To Pharmacist</Button> 
-				</Form>
-				{/*<Link to='/pharmacist'>
-					<Button onClick={this.onButtonClick}>See a Pharmacist</Button>
-				</Link>*/}
-			</div>
+		        <PatientName name={this.props.name} age={this.props.age} occupation={this.props.occupation}/> 
+		        <PatientMetaData address={this.props.address} phone={this.props.phone} email={this.props.email}/> 
+	        	<Form className="container" onSubmit={this.handleSubmit}> 
+						<FormGroup className="info-header-wrapper">
+	            			<h3 className="info-header">Prescription</h3> 
+							<Input type="select" name="selectedMedicine" id="selectedMedicine" onChange={this.onSelectedMedicineChange}>
+								<option value="Levothyroxine">Levothyroxine</option>
+								<option value="ACE Inhibitor">ACE Inhibitor</option>
+								<option value="Anti-Depressant">Anti-Depressant</option>
+								<option value="Insulin">Insulin</option>
+							</Input>
+						</FormGroup>
+						<FormGroup className="info-header-wrapper">
+	            			<h3 className="info-header">Doctor Comments: </h3> 
+							<Input type="textarea" name="doctorComment" id="doctorComment" onChange={this.onDoctorCommentChange} />
+						</FormGroup>
+	         			<Button className="submitBtn"  type="submit">Submit To Pharmacist</Button> 
+					</Form>
+				</div>
 		);
 	}
 }
@@ -102,10 +100,4 @@ const mapStateToProps = ( state ) => {
 	}
 }
 
-const bindActionsToDispath = (dispatch) => (
-	{
-		SaveDoctorPrescription: (data) => dispatch(actions.SaveDoctorPrescription(data))
-	}
-);
-
-export default connect(mapStateToProps, bindActionsToDispath)(DoctorPage);
+export default connect(mapStateToProps, actions)(DoctorPage);

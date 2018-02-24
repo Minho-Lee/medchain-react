@@ -27,7 +27,7 @@ export default class PatientRecentActivityList extends Component {
 		});
 
 		return (
-			<div className="container">
+			<div className="recAct">
         		<ul className="activity-list">{recentActivityComponents}</ul> 
 			</div>
 		);
