@@ -1,10 +1,10 @@
 import React from 'react';
-import { Card, CardTitle, CardBody, CardText } from 'reactstrap';
+import { Card, CardTitle, CardBody } from 'reactstrap';
 
 const CompanyDetails = () => {
 	return (
 		<Card>
-			<CardTitle>
+			<CardTitle className='mb-0'>
 				Company Details
 			</CardTitle>
 			<CardBody>

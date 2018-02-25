@@ -1,7 +1,9 @@
 .invoice {
 	width: 970px !important;
 }
-
+.mono {
+  font-family: monospace;
+}
 .pharmacist-heading p{
 	color: gray;
 	font-size: 1.2rem;
@@ -32,3 +34,18 @@
 .dl-horizantal dd {
 	margin-left: 90px;
 }
+
+#products .card-body {
+	padding: 0;
+}
+
+.colfix {
+	width: 15%;
+	text-align: center;
+}
+#comments p{
+	color: black;
+}
+ #payment p {
+ 	color: black;
+ }

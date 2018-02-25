@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 
 import PatientName from '../components/PatientPageComponents/PatientName';
 import PatientMetaData from '../components/PatientPageComponents/PatientMetaData';
@@ -19,10 +18,6 @@ class PatientPage extends Component {
 	// When the page loads, grab the default data and set it into props
 	componentWillMount = () => {
 		this.props.GetActivePatientData();
-	}
-
-	onButtonClick = () => {
-		this.props.SaveToFirebase(this.props);
 	}
 
 	// componentWillReceiveProps = (nextProps) => {
@@ -51,7 +46,6 @@ class PatientPage extends Component {
 }
 
 const mapStateToProps = (state) => {
-	console.log(state);
 	return {
 		id: state.activePat.id,
 		name: state.activePat.name,
