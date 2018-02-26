@@ -11,6 +11,7 @@ import CustomerDetails from '../components/PharmacistPageComponents/CustomerDeta
 import Products from '../components/PharmacistPageComponents/Products';
 import Comments from '../components/PharmacistPageComponents/Comments';
 import Payment from '../components/PharmacistPageComponents/Payment';
+import Footer from '../components/PharmacistPageComponents/Footer';
 
 class PharmacistPage extends Component {
 	componentWillMount = () => {
@@ -51,8 +52,8 @@ class PharmacistPage extends Component {
 						</div>
 					</div>	
 				</div>
-
-				<div className='invoice-footer'>
+				<div className='invoice-footer mt-5'>
+					<Footer />
 				</div>
 			</div>
 		);
