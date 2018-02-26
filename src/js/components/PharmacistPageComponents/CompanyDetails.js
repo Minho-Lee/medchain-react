@@ -1,31 +1,25 @@
 import React from 'react';
+import { Card, CardTitle, CardBody } from 'reactstrap';
 
 const CompanyDetails = () => {
 	return (
-		<div>
-			<h4>Company Details</h4>
-			<div>
-				<div>
-					<span><b>Name</b></span>
-					<span> Acruz </span>				
-				</div>
-
-				<div>
-					<span><b>Address</b></span>
-					<span> 300 Front St. West, Toronto </span>				
-				</div>
-
-				<div>
-					<span><b>Phone</b></span>
-					<span> (647) 142-9811 </span>				
-				</div>
-
-				<div>
-					<span><b>Email</b></span>
-					<span> contact@acruz.com </span>				
-				</div>
-			</div>
-		</div>
+		<Card>
+			<CardTitle className='mb-0'>
+				Company Details
+			</CardTitle>
+			<CardBody>
+				<dl className='dl-horizantal'>
+					<dt>Name</dt>
+					<dd>Acruz</dd>
+					<dt>Address</dt>
+					<dd>300 Front St. West, Toronto</dd>
+					<dt>Phone</dt>
+					<dd>(647) 142-9811</dd>
+					<dt>Email</dt>
+					<dd>contact@acruz.com</dd>
+				</dl>
+			</CardBody>
+		</Card>
 	);
 }
 

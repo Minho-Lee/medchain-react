@@ -34,11 +34,11 @@ export default class MedCustomNavBar extends Component {
 
 	render() {
 		return (
-	        <Navbar className="navbar-body" fixed="top" dark expand="md"> 
-	        	<NavbarBrand href="home"> 
-	            	<span className="color-one">med</span> 
-	        		<span className="color-two">chain</span> 
-	        	</NavbarBrand> 
+			<Navbar className="navbar-body" fixed="top" dark expand="md"> 
+				<NavbarBrand href="home"> 
+						<span className="color-one">med</span> 
+					<span className="color-two">chain</span> 
+				</NavbarBrand> 
 				<NavbarToggler onClick={this.toggle} />
 				<Collapse isOpen={this.state.isOpen} navbar>
 					<Nav className="ml-auto" navbar>

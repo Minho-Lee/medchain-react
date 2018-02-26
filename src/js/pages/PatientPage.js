@@ -22,6 +22,7 @@ class PatientPage extends Component {
 		this.props.SaveToFirebase(this.props);
 	}
 
+
 	render() {
 		return (
 			<div>
@@ -39,7 +40,6 @@ class PatientPage extends Component {
 }
 
 const mapStateToProps = (state) => {
-	console.log(state);
 	return {
 		id: state.activePat.id,
 		name: state.activePat.name,

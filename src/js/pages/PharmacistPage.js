@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 // import { Link } from 'react-router-dom';
+import { Digital } from 'react-activity';
 
 import * as actions from '../actions';
 
@@ -10,23 +11,50 @@ import CustomerDetails from '../components/PharmacistPageComponents/CustomerDeta
 import Products from '../components/PharmacistPageComponents/Products';
 import Comments from '../components/PharmacistPageComponents/Comments';
 import Payment from '../components/PharmacistPageComponents/Payment';
+import Footer from '../components/PharmacistPageComponents/Footer';
 
 class PharmacistPage extends Component {
 	componentWillMount = () => {
 		// This sends in a request to fetch all data and set it to this.props through reducer prior to rendering
-		this.props.GetActivePatientData(1);
+		this.props.GetActivePatientData();
 	}
 
 	render() {
+		if (!this.props) {
+			return (
+				<Digital size={50} />
+			);
+		}
+		const { name, age, address, phone, email, occupation, medPrescribed, recentActivities } = this.props;
+
 		return(
-			<div className='container'>
+			<div className='container-fluid invoice'>
 				<PharmacyHeading />
-				<CompanyDetails />
-				<CustomerDetails name={this.props.name} age={this.props.age} address={this.props.address}
-					 phone={this.props.phone} email={this.props.email} /><br/>
-				<Products /><br/>
-				<Comments /><br/>
-				<Payment /><br/>
+				<div className='invoice-body'>
+					<div className='row'>
+						<div className='col-xs-5 col-sm-5'>
+							<CompanyDetails />
+						</div>
+						<div className='col-xs-7 col-sm-7'>
+							<CustomerDetails name={name} age={age} address={address}
+								phone={phone} email={email} />
+						</div>
+					</div>
+					<div id='products' className='mt-5'>
+						<Products items={medPrescribed}/><br/>
+					</div>
+					<div className='row'>
+						<div className='col-xs-7 col-sm-7' id='comments'>
+							<Comments items={medPrescribed} />
+						</div>
+						<div className='col-xs-5 col-sm-5' id='payment'> 
+							<Payment />
+						</div>
+					</div>	
+				</div>
+				<div className='invoice-footer mt-5'>
+					<Footer />
+				</div>
 			</div>
 		);
 	}

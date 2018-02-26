@@ -1,0 +1,81 @@
+.invoice {
+	width: 970px !important;
+}
+.mono {
+  font-family: monospace;
+}
+.pharmacist-heading p{
+	color: gray;
+	font-size: 1.2rem;
+}
+.card {
+	border-radius: 5px;
+}
+.card-title {
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+	background-color: #F33259;
+	color: white;
+	padding: 10px;
+	/*height: 40px;*/
+}
+.dl-horizantal {
+	margin: 0;
+}
+.dl-horizantal dt {
+	float: left;
+	width: 80px;
+	overflow: hidden;
+	clear: left;
+	text-align: right;
+	text-overflow: ellipsis;;
+	white-space: nowrap;
+}
+.dl-horizantal dd {
+	margin-left: 90px;
+}
+
+#products .card-body {
+	padding: 0;
+}
+
+.colfix {
+	width: 15%;
+	text-align: center;
+}
+#comments p{
+	color: black;
+}
+#payment p {
+	color: black;
+}
+.invoice-footer {
+	text-align: center;
+}
+.invoice-footer p{
+	color: #999;
+	font-size: 0.9rem;
+}
+.logo-color-one {
+	color: rgb(51, 122, 183);
+	transition: color 0.6s linear;
+}
+.logo-color-one:hover {
+	color: #F33259;
+}
+.logo-color-one:hover + .logo-color-two {
+	color: rgb(51, 122, 183);
+}
+.logo-color-two{
+	color: #F33259;
+	transition: color 0.6s linear;
+}
+.logo-color-two:hover {
+	color: rgb(51, 122, 183);
+}
+.logo-color-two:hover ~ .logo-color-one{
+	color: #F33259;
+}
+.logo-color-change:hover {
+	text-decoration: none;
+}
