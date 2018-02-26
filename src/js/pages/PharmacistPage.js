@@ -33,7 +33,8 @@ class PharmacistPage extends Component {
 				<div className='invoice-body'>
 					<div className='row'>
 						<div className='col-xs-5 col-sm-5'>
-							<CompanyDetails />
+							{/* sending in a random variable to load everything at the same time */}
+							<CompanyDetails loading={name}/>
 						</div>
 						<div className='col-xs-7 col-sm-7'>
 							<CustomerDetails name={name} age={age} address={address}
@@ -48,7 +49,8 @@ class PharmacistPage extends Component {
 							<Comments items={medPrescribed} />
 						</div>
 						<div className='col-xs-5 col-sm-5' id='payment'> 
-							<Payment />
+							{/* sending in a random variable to load everything at the same time */}
+							<Payment loading={name} />
 						</div>
 					</div>	
 				</div>

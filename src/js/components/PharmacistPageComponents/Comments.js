@@ -7,7 +7,7 @@ const Comments = ({items}) => {
 	// if 'items' have not been received yet, lastItem will be undefined which will cause the app to crash.
 	// if not loaded yet, render loading bar.
 	if (items.length === 0) {
-		return <Digital size={20} />;
+		return <Digital size={30} />;
 	}
 	// console.log(items);
 	const lastItem = items[items.length-1];

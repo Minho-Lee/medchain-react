@@ -4,6 +4,9 @@
 .mono {
   font-family: monospace;
 }
+.pharmacist-heading {
+	padding-top: 25px;
+}
 .pharmacist-heading p{
 	color: gray;
 	font-size: 1.2rem;
@@ -51,6 +54,7 @@
 }
 .invoice-footer {
 	text-align: center;
+	margin-bottom: 30px;
 }
 .invoice-footer p{
 	color: #999;
@@ -60,22 +64,16 @@
 	color: rgb(51, 122, 183);
 	transition: color 0.6s linear;
 }
-.logo-color-one:hover {
-	color: #F33259;
-}
-.logo-color-one:hover + .logo-color-two {
-	color: rgb(51, 122, 183);
-}
 .logo-color-two{
 	color: #F33259;
 	transition: color 0.6s linear;
 }
-.logo-color-two:hover {
-	color: rgb(51, 122, 183);
-}
-.logo-color-two:hover ~ .logo-color-one{
-	color: #F33259;
-}
 .logo-color-change:hover {
 	text-decoration: none;
+}
+.logo-color-change:hover > .logo-color-one {
+	color: #F33259;
+}
+.logo-color-change:hover > .logo-color-two {
+	color: rgb(51, 122, 183);
 }

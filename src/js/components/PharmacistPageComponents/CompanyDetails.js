@@ -1,7 +1,11 @@
 import React from 'react';
 import { Card, CardTitle, CardBody } from 'reactstrap';
+import { Digital } from 'react-activity';
 
-const CompanyDetails = () => {
+const CompanyDetails = ({loading}) => {
+	if (!loading) {
+		return (<Digital size={30} />);
+	}
 	return (
 		<Card>
 			<CardTitle className='mb-0'>
