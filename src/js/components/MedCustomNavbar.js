@@ -34,28 +34,26 @@ export default class MedCustomNavBar extends Component {
 
 	render() {
 		return (
-			<div>
-		        <Navbar className="navbar-body" fixed="top" dark expand="md"> 
-		        	<NavbarBrand href="home"> 
-		            	<span className="color-one">med</span> 
-		        		<span className="color-two">chain</span> 
-		        	</NavbarBrand> 
-					<NavbarToggler onClick={this.toggle} />
-					<Collapse isOpen={this.state.isOpen} navbar>
-						<Nav className="ml-auto" navbar>
-							<NavItem>
-								<NavLink className={(this.getActiveState() === '/patient') ? "active" : "disabled" }>Patient</NavLink>
-							</NavItem>
-							<NavItem>
-								<NavLink className={(this.getActiveState() === '/doctor') ? "active" : "disabled" }>Doctor</NavLink>
-							</NavItem>
-							<NavItem>
-								<NavLink className={(this.getActiveState() === '/pharmacist') ? "active" : "disabled" }>Pharmacist</NavLink>
-							</NavItem>
-						</Nav>
-					</Collapse>
-				</Navbar>
-			</div>
+			<Navbar className="navbar-body" fixed="top" dark expand="md"> 
+				<NavbarBrand href="home"> 
+						<span className="color-one">med</span> 
+					<span className="color-two">chain</span> 
+				</NavbarBrand> 
+				<NavbarToggler onClick={this.toggle} />
+				<Collapse isOpen={this.state.isOpen} navbar>
+					<Nav className="ml-auto" navbar>
+						<NavItem>
+							<NavLink className={(this.getActiveState() === '/patient') ? "active" : "disabled" }>Patient</NavLink>
+						</NavItem>
+						<NavItem>
+							<NavLink className={(this.getActiveState() === '/doctor') ? "active" : "disabled" }>Doctor</NavLink>
+						</NavItem>
+						<NavItem>
+							<NavLink className={(this.getActiveState() === '/pharmacist') ? "active" : "disabled" }>Pharmacist</NavLink>
+						</NavItem>
+					</Nav>
+				</Collapse>
+			</Navbar>
 		);
 	}
 }

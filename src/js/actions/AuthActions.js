@@ -6,6 +6,12 @@ import {
 	PASSWORD_CHANGED,
 	LOGIN_USER_SUCCESS,
 	LOGIN_USER_FAIL,
+	REGISTER_USER,
+	REGISTER_USER_SUCCESS,
+	REGISTER_USER_FAIL,
+	REGISTER_USER_INFO,
+	REGISTER_USER_INFO_SUCCESS,
+	REGISTER_USER_INFO_FAIL
 } from './types';
 
 export const loginUser = ({ userid, password }) => {
@@ -74,5 +80,47 @@ const loginUserFail = (dispatch) => {
 	dispatch({
 		type: LOGIN_USER_FAIL,
 	});
+}
+
+export const RegisterNewUser = ({ email, password, address, name, age, occupation, phone }) => {
+	return (dispatch) => {
+		dispatch({
+			type: REGISTER_USER,
+		});
+
+		// register user
+		firebase.auth().createUserWithEmailAndPassword(email, password).then((user) => {
+			dispatch({
+				type: REGISTER_USER_SUCCESS
+			});
+
+			dispatch({
+				type: REGISTER_USER_INFO
+			});
+
+			// put user with patient info in database
+			const dbRefUser = firebase.database().ref('users').child(user.uid).child("PatientInfo");
+
+			dbRefUser.push({
+				email,
+				address,
+				name,
+				age,
+				occupation,
+				phone
+			});
+
+			dispatch({
+				type: REGISTER_USER_INFO_SUCCESS
+			});
+
+		}).catch((error) => {
+			console.log(error);
+			dispatch({
+				type: REGISTER_USER_INFO_FAIL
+			});
+		});
+
+	}
 }
 

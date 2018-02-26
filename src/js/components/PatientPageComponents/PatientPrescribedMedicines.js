@@ -19,8 +19,9 @@ export default class PatientPrescribedMedicines extends Component {
 
 	render() {
 		return (
-     		<div className="container patient-data"> 
-       			<h3 className="patient-info-header">Prescribed Medicines </h3> 				<PatientPrescribedMedicineList medPrescribed={this.state.medPrescribed}/>
+     		<div className="drugs"> 
+       			<h3 className="info-header">Prescribed Medicines </h3> 
+       			<PatientPrescribedMedicineList medPrescribed={this.state.medPrescribed}/>
 			</div>
 		);
 	}

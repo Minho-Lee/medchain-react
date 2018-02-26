@@ -1,8 +1,6 @@
 import React from 'react';
 import RandomGuyImage from '../../../images/square-sample-face.jpg';
 
-import '../../../scss/PatientPage.css' 
-
 const PatientName = ({name, age, occupation}) => {
 	return (
 	    <div className="row header-section"> 
