@@ -121,5 +121,17 @@
     left: 15px;
     text-align: center;
   } 
+}
+
+.registration-form {
+  margin-top: 8%;
+}
+
+@media screen and (max-width:  650px) {
+  .registration-form {
+    margin-top: 15%;
+  }
 
 }
+
+

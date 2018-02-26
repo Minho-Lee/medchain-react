@@ -20,16 +20,16 @@ import {
 } 
  
 export default (state=INIT_STATE, action) => { 
-  switch (action.type) { 
-    case GET_ACTIVE_PATIENT_DATA: {
-    	console.log('GET_ACTIVE_PATIENT_DATA');
-      // TODO: Possibly add loading feature here 
-      return { ...state } 
-    } 
+	switch (action.type) { 
+	    case GET_ACTIVE_PATIENT_DATA: {
+	    	console.log('GET_ACTIVE_PATIENT_DATA');
+	     	// TODO: Possibly add loading feature here 
+	     	return { ...state } 
+	    } 
 
-    case GET_ACTIVE_PATIENT_DATA_SUCCESS: {
-    	console.log('GET_ACTIVE_PATIENT_DATA_SUCCESS');
-      let patientInfo = {};
+	    case GET_ACTIVE_PATIENT_DATA_SUCCESS: {
+	    	console.log('GET_ACTIVE_PATIENT_DATA_SUCCESS');
+	    	let patientInfo = {};
 
 			// setup Patient Info
 			var patInfo = action.payload.PatientInfo;
@@ -72,18 +72,18 @@ export default (state=INIT_STATE, action) => {
 			patientInfo['recentActivities'] = recActList;
 
 
-		return { ...state, ...patientInfo }
-		}
+			return { ...state, ...patientInfo }
+			}
 
-		case GET_ACTIVE_PATIENT_DATA_FAIL: {
-			return {...state, payload: action.payload }
-		}
+			case GET_ACTIVE_PATIENT_DATA_FAIL: {
+				return {...state, payload: action.payload }
+			}
 
-		case SAVE_PATIENT_DATA: {
-			return { payload: action.payload };
-		}
- 
-		default: 
-			return state; 
+			case SAVE_PATIENT_DATA: {
+				return { payload: action.payload };
+			}
+	 
+			default: 
+				return state; 
 	} 
 }

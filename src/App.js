@@ -13,6 +13,7 @@ import HomePage from './js/pages/HomePage';
 import PatientPage from './js/pages/PatientPage';
 import DoctorPage from './js/pages/DoctorPage';
 import PharmacistPage from './js/pages/PharmacistPage';
+import RegistrationPage from './js/pages/RegistrationPage'
 
 import MedCustomNavbar from './js/components/MedCustomNavbar';
 
@@ -45,6 +46,7 @@ class App extends Component {
 						<Route path='/patient' component={PatientPage} />
 						<Route path='/doctor' component={DoctorPage} />
 						<Route path='/pharmacist' component={PharmacistPage} />
+						<Route path='/registration' component={RegistrationPage} />
 					</div>
 				</ConnectedRouter>
 			</Provider>

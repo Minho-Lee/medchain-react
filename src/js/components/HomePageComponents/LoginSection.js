@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
 import { 
@@ -31,6 +31,11 @@ class LoginSection extends Component {
 		event.preventDefault();
 	}
 
+	handleFormSubmitRegister = (event) => {
+		event.preventDefault();
+		store.dispatch(push('/registration'));
+	}
+
 	handleUseridChange = (event) => {
 		this.props.userChanged(event.target.value);
 	}
@@ -51,7 +56,10 @@ class LoginSection extends Component {
 			)
 		} else {
 			return (
-				<Button type='submit' onClick={this.handleFormSubmit}>Submit</Button>
+				<div>
+					<Button type='submit' onClick={this.handleFormSubmit}>Submit</Button>
+					<Button type='submit' onClick={this.handleFormSubmitRegister}>Register</Button>
+				</div>
 			);
 		}
 	}
