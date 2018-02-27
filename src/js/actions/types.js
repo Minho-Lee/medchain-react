@@ -15,3 +15,6 @@ export const REGISTER_USER_FAIL = 'register_user_fail';
 export const REGISTER_USER_INFO = 'register_user_info';
 export const REGISTER_USER_INFO_SUCCESS = 'register_user_info_success';
 export const REGISTER_USER_INFO_FAIL = 'register_user_info_fail';
+export const GET_ACTIVE_PATIENT_DATA_PIC = 'get_active_patient_data_pic';
+export const GET_ACTIVE_PATIENT_DATA_PIC_SUCCESS = 'get_active_patient_data_pic_success';
+export const GET_ACTIVE_PATIENT_DATA_PIC_FAIL = 'get_active_patient_data_pic_fail';
