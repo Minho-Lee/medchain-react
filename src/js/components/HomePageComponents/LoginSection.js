@@ -56,9 +56,9 @@ class LoginSection extends Component {
 			)
 		} else {
 			return (
-				<div>
-					<Button type='submit' onClick={this.handleFormSubmit}>Submit</Button>
-					<Button type='submit' onClick={this.handleFormSubmitRegister}>Register</Button>
+				<div className='buttons mt-2'>
+					<Button className='radical-btn' type='submit' onClick={this.handleFormSubmit}>Submit</Button>
+					<Button className='radical-btn ml-2' type='submit' onClick={this.handleFormSubmitRegister}>Register</Button>
 				</div>
 			);
 		}

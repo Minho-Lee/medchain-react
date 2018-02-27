@@ -6,7 +6,7 @@ import WelcomeSection from '../components/HomePageComponents/WelcomeSection';
 export default class HomePage extends Component {
 	render() {
 		return (
-			<div className="container">
+			<div className="container" id='main-container'>
 				<WelcomeSection />
 				<LoginSection />
 			</div>

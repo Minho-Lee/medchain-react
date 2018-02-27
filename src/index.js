@@ -4,7 +4,8 @@ import { render } from 'react-dom';
 import './scss/index.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'react-activity/dist/react-activity.css';
-import './scss/PharmacistPage.css'
+import './scss/PharmacistPage.css';
+import './scss/HomePage.css';
 
 
 import registerServiceWorker from './js/serviceworkers/registerServiceWorker';
