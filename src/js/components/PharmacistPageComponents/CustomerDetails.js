@@ -1,7 +1,11 @@
 import React from 'react';
 import { Card, CardTitle, CardBody } from 'reactstrap';
+import { Digital } from 'react-activity';
 
 const CustomerDetails = ({name, age, address, phone, email}) => {
+	if (!name) {
+		return (<Digital size={30} />);
+	}
 	return (
 		<Card>
 			<CardTitle>Customer Details</CardTitle>
