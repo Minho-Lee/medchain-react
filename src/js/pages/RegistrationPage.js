@@ -25,7 +25,8 @@ class RegistrationPage extends React.Component {
 			age: 0,
 			name: '',
 			occupation: '',
-			phone: ''
+			phone: '',
+			picture: null
 		}
 	}
 
@@ -79,6 +80,13 @@ class RegistrationPage extends React.Component {
 		});
 	}
 
+	onPicChange = (event) => {
+		var picture = event.target.files[0];
+		this.setState({
+			picture 
+		});
+	}
+
 	render() {
 		return (
 			<div className="registration-form">
@@ -110,6 +118,10 @@ class RegistrationPage extends React.Component {
 					<FormGroup className="info-header-wrapper">
             			<h3 className="info-header">Phone</h3> 
 						<Input type="text" name="phone" id="phone" onChange={this.onPhoneChange} />
+					</FormGroup>
+					<FormGroup className="info-header-wrapper">
+            			<h3 className="info-header">Photo</h3> 
+						<Input type="file" name="pic" id="pic" onChange={this.onPicChange} />
 					</FormGroup>
          			<Button className="submitBtn"  type="submit">Submit Registration</Button> 
 				</Form>

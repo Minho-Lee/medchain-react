@@ -26,7 +26,7 @@ class PatientPage extends Component {
 	render() {
 		return (
 			<div>
-				<PatientName name={this.props.name} age={this.props.age} occupation={this.props.occupation}/>
+				<PatientName name={this.props.name} age={this.props.age} occupation={this.props.occupation} picture={this.props.picture}/>
 				<PatientMetaData address={this.props.address} phone={this.props.phone} email={this.props.email}/>
 				<div className="patient-page-content">
 					<PatientPrescribedMedicines medPrescribed={this.props.medPrescribed}/>
@@ -50,6 +50,7 @@ const mapStateToProps = (state) => {
 		email: state.activePat.email,
 		medPrescribed: state.activePat.medPrescribed,
 		recentActivities: state.activePat.recentActivities,
+		picture: state.activePat.picture
 	};
 }
 

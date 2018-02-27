@@ -1,12 +1,12 @@
 import React from 'react';
 import RandomGuyImage from '../../../images/square-sample-face.jpg';
 
-const PatientName = ({name, age, occupation}) => {
+const PatientName = ({name, age, occupation, picture}) => {
 	return (
 	    <div className="row header-section"> 
 	    	<div> 
 		        <div className="face-picture"> 
-		          <img className='mr-3' src={RandomGuyImage} height={300} alt="" /> 
+		          <img className='mr-3' src={(picture) ? picture : RandomGuyImage} alt="" height={300} /> 
 		        </div> 
 		        <div className="patient-name"> 
 		          <h4><b>{name}, {age}</b></h4> 

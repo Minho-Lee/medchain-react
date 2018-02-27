@@ -2,7 +2,11 @@ import {
 	GET_ACTIVE_PATIENT_DATA,
 	GET_ACTIVE_PATIENT_DATA_SUCCESS,
 	GET_ACTIVE_PATIENT_DATA_FAIL,
-	SAVE_PATIENT_DATA
+	SAVE_PATIENT_DATA,
+	GET_ACTIVE_PATIENT_DATA_PIC,
+	GET_ACTIVE_PATIENT_DATA_PIC_SUCCESS,
+	GET_ACTIVE_PATIENT_DATA_PIC_FAIL
+
 } from '../actions/types';
  
  const INIT_STATE = {
@@ -16,18 +20,17 @@ import {
   email: "",
   medPrescribed: [], 
   recentActivities: [],
+  picture: null
 } 
  
 export default (state=INIT_STATE, action) => { 
 	switch (action.type) { 
 	    case GET_ACTIVE_PATIENT_DATA: {
-	    	console.log('GET_ACTIVE_PATIENT_DATA');
 	     	// TODO: Possibly add loading feature here 
 	     	return { ...state } 
 	    } 
 
 	    case GET_ACTIVE_PATIENT_DATA_SUCCESS: {
-	    	console.log('GET_ACTIVE_PATIENT_DATA_SUCCESS');
 	    	let patientInfo = {};
 
 			// setup Patient Info
@@ -70,19 +73,33 @@ export default (state=INIT_STATE, action) => {
 			}
 			patientInfo['recentActivities'] = recActList;
 
-
 			return { ...state, ...patientInfo }
-			}
+		}
 
-			case GET_ACTIVE_PATIENT_DATA_FAIL: {
-				return {...state, payload: action.payload }
-			}
+		case GET_ACTIVE_PATIENT_DATA_FAIL: {
+			return {...state }
+		}
 
-			case SAVE_PATIENT_DATA: {
-				return { payload: action.payload };
-			}
-	 
-			default: 
-				return state; 
+		case GET_ACTIVE_PATIENT_DATA_PIC: {
+			return {...state }
+		}
+
+		case GET_ACTIVE_PATIENT_DATA_PIC_SUCCESS: {
+			// get user profile pic
+    		var picture = action.payload
+   			return (picture) ?  { ...state, picture } : { ...state }
+
+		}
+
+		case GET_ACTIVE_PATIENT_DATA_PIC_FAIL: {
+			return {...state, payload: action.payload }
+		}
+
+		case SAVE_PATIENT_DATA: {
+			return { payload: action.payload };
+		}
+ 
+		default: 
+			return state; 
 	} 
 }

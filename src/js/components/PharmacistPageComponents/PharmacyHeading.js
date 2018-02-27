@@ -15,7 +15,7 @@ export default class PharmacyHeading extends Component {
 					{this.generateRandomNumber()}
 				</div>
 				<div className='col-xs-4 col-sm-4'>
-					<img src='https://dummyimage.com/70x70/000/fff&text=Acruz' alt='insert image' />
+					<img src='https://dummyimage.com/70x70/000/fff&text=Acruz' alt='insert' />
 				</div>
 			</div>
 		);

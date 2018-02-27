@@ -8,10 +8,7 @@ import {
 	LOGIN_USER_FAIL,
 	REGISTER_USER,
 	REGISTER_USER_SUCCESS,
-	REGISTER_USER_FAIL,
-	REGISTER_USER_INFO,
-	REGISTER_USER_INFO_SUCCESS,
-	REGISTER_USER_INFO_FAIL
+	REGISTER_USER_FAIL
 } from './types';
 
 export const loginUser = ({ userid, password }) => {
@@ -26,31 +23,12 @@ export const loginUser = ({ userid, password }) => {
 		// Only if user is authenticated, it will go into 'then()' which will trigger the dispatch
 		firebase.auth().signInWithEmailAndPassword(userid, password)
 			.then((user) => {
-				// console.log(user);
 				loginUserSuccess(dispatch, user);	
 			})
 			.catch((error) => {
-				// For now, only going to be dealing with users that are already registered.
-				// Hence, no new registration will be accepted (perhaps registration will be implemented in future)
 				loginUserFail(dispatch);
-				// console.log(error);
-				// firebase.auth().createUserWithEmailAndPassword(userid, password)
-				// 	.then((user) => loginUserSuccess(dispatch, user))
-				// 	.catch((error) => {
-				// 		console.log(error);
-				// 		loginUserFail(dispatch)
-				// 	});
 			}
 		);
-
-		// authentication listner to handle page refresh, login/logout
-		// firebase.auth().onAuthStateChanged(firebaseUser => {
-		// 	if(firebaseUser) {
-		// 		console.log(firebaseUser);
-		// 	} else {
-		// 		console.log("Not logged in anymore");
-		// 	}
-		// });
 	}
 };
 
@@ -82,7 +60,7 @@ const loginUserFail = (dispatch) => {
 	});
 }
 
-export const RegisterNewUser = ({ email, password, address, name, age, occupation, phone }) => {
+export const RegisterNewUser = ({ email, password, address, name, age, occupation, phone, picture }) => {
 	return (dispatch) => {
 		dispatch({
 			type: REGISTER_USER,
@@ -94,30 +72,37 @@ export const RegisterNewUser = ({ email, password, address, name, age, occupatio
 				type: REGISTER_USER_SUCCESS
 			});
 
-			dispatch({
-				type: REGISTER_USER_INFO
-			});
 
 			// put user with patient info in database
 			const dbRefUser = firebase.database().ref('users').child(user.uid).child("PatientInfo");
-
+			var pictureName = picture.name;
 			dbRefUser.push({
 				email,
 				address,
 				name,
 				age,
 				occupation,
-				phone
+				phone,
+				pictureName
 			});
 
-			dispatch({
-				type: REGISTER_USER_INFO_SUCCESS
-			});
+			// add picture, if picture doesnt add pic, we call on default pic saved in the app
+			if(picture) {
+				//upload user image into firebase storage
+				var storageRef = firebase.storage().ref('users').child(user.uid).child(pictureName);
+				var task = storageRef.put(picture);
+
+				//if we want to add image upload progress bar
+				task.on('state_changed', (snapshot) => {
+					var perc = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+					console.log(perc);
+				});
+			}
 
 		}).catch((error) => {
 			console.log(error);
 			dispatch({
-				type: REGISTER_USER_INFO_FAIL
+				type: REGISTER_USER_FAIL
 			});
 		});
 
