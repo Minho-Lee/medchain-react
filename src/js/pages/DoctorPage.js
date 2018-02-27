@@ -77,7 +77,7 @@ class DoctorPage extends Component {
 						</FormGroup>
 						<FormGroup className="info-header-wrapper">
 	            			<h3 className="info-header">Doctor Comments: </h3> 
-							<Input type="textarea" name="doctorComment" id="doctorComment" onChange={this.onDoctorCommentChange} />
+							<Input type="textarea" name="doctorComment" maxLength="100" id="doctorComment" onChange={this.onDoctorCommentChange} />
 						</FormGroup>
 	         			<Button className="submitBtn"  type="submit">Submit To Pharmacist</Button> 
 					</Form>
