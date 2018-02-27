@@ -4,7 +4,7 @@ import McLogo from '../../../images/mclight-logo.png';
 export default class WeclomeSection extends Component {
 	render() {
 		return (
-			<div className="container section1">
+			<div className="section1">
 				<header className="row">
 					<img  src={McLogo} alt="Smiley face" />
 					<h2>med</h2>
