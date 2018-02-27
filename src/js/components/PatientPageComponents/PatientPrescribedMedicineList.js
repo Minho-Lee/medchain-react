@@ -22,8 +22,12 @@ export default class PatientPrescribedMedicineList extends Component {
 	}
 
 	render() {
+		var numDisplayed = 0;
 		const medicinesPrescribedComponents = this.state.medPrescribed.map((medicine) => {
-			return <PrescribedMedicine key={medicine.id} {...medicine}/>;
+			if(numDisplayed < 5) {
+				numDisplayed++;
+				return <PrescribedMedicine key={medicine.id} {...medicine}/>;
+			}
 		});
 
 		return (

@@ -21,9 +21,12 @@ export default class PatientRecentActivityList extends Component {
 	}
 
 	render() {
-
+		var numDisplayed = 0;
 		const recentActivityComponents = this.state.recentActivities.map((recentActivity) => {
-			return <RecentActivity key={recentActivity.id} {...recentActivity}/>;
+			if(numDisplayed < 10) {
+				numDisplayed++;
+				return <RecentActivity key={recentActivity.id} {...recentActivity}/>;
+			}
 		});
 
 		return (
