@@ -28,7 +28,7 @@ class PharmacistPage extends Component {
 		const { name, age, address, phone, email, occupation, medPrescribed, recentActivities } = this.props;
 
 		return(
-			<div className='container-fluid invoice'>
+			<div className='container-fluid invoice' style={{'backgroundColor': 'white', 'color': 'black'}}>
 				<PharmacyHeading />
 				<div className='invoice-body'>
 					<div className='row'>

@@ -57,7 +57,7 @@ class RegistrationPage extends React.Component {
 		// console.log(data);
 		if (this.state.formValid) {
 			this.props.RegisterNewUser({...data});
-			store.dispatch(push('/patient'));	
+			// store.dispatch(push('/patient'));	
 		}		
 	}
 
@@ -213,8 +213,8 @@ class RegistrationPage extends React.Component {
 	}
 }
 
-const mapStateToProps = (state) => {
-	return {}
-}
+// const mapStateToProps = (state) => {
+// 	return {}
+// }
 
-export default connect(mapStateToProps, actions)(RegistrationPage);
+export default connect(null, actions)(RegistrationPage);
