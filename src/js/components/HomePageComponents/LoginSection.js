@@ -66,7 +66,7 @@ class LoginSection extends Component {
 	render() { 
 		return (
 			<div>
-				<h2 className='mt-3'>Login Section</h2>
+				<h2 className='mt-3'>Login  or  Sign-up to demo the app</h2>
 				<Form>
 					<FormGroup>
 						<Label for='userid'>User ID</Label>

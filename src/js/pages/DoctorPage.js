@@ -80,8 +80,8 @@ class DoctorPage extends Component {
 							</Input>
 						</FormGroup>
 						<FormGroup className="info-header-wrapper">
-										<h3 className="info-header">Doctor Comments: </h3> 
-							<Input type="textarea" name="doctorComment" id="doctorComment" onChange={this.onDoctorCommentChange} />
+	            <h3 className="info-header">Doctor Comments: </h3> 
+							<Input type="textarea" name="doctorComment" maxLength="100" id="doctorComment" onChange={this.onDoctorCommentChange} />
 						</FormGroup>
 								<Button className="submitBtn"  type="submit">Submit To Pharmacist</Button> 
 					</Form>
@@ -95,13 +95,13 @@ const mapStateToProps = ( state ) => {
 	return {
 		user: state.auth.user,
 		id: state.activePat.id, 
-		name: state.activePat.name, 
-		age: state.activePat.age, 
-		occupation: state.activePat.occupation, 
-		address: state.activePat.address, 
-		phone: state.activePat.phone, 
-		email: state.activePat.email,
-		picture: state.activePat.picture,
+    name: state.activePat.name, 
+    age: state.activePat.age, 
+    occupation: state.activePat.occupation, 
+    address: state.activePat.address, 
+    phone: state.activePat.phone, 
+    email: state.activePat.email,
+   	picture: state.activePat.picture
 	}
 }
 
