@@ -63,7 +63,7 @@ class DoctorPage extends Component {
 	render() {
 		return(
 			<div>
-		        <PatientName name={this.props.name} age={this.props.age} occupation={this.props.occupation}/> 
+		        <PatientName name={this.props.name} age={this.props.age} occupation={this.props.occupation} picture={this.props.picture} /> 
 		        <PatientMetaData address={this.props.address} phone={this.props.phone} email={this.props.email}/> 
 	        	<Form className="container" onSubmit={this.handleSubmit}> 
 						<FormGroup className="info-header-wrapper">
@@ -96,7 +96,8 @@ const mapStateToProps = ( state ) => {
 	    occupation: state.activePat.occupation, 
 	    address: state.activePat.address, 
 	    phone: state.activePat.phone, 
-	    email: state.activePat.email
+	    email: state.activePat.email,
+	   	picture: state.activePat.picture
 	}
 }
 
