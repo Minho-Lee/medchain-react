@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Digital } from 'react-activity';
 
 import PatientName from '../components/PatientPageComponents/PatientName';
 import PatientMetaData from '../components/PatientPageComponents/PatientMetaData';
@@ -18,12 +19,10 @@ class PatientPage extends Component {
 		this.props.GetActivePatientData();
 	}
 
-	onButtonClick = () => {
-		this.props.SaveToFirebase(this.props);
-	}
-
-
 	render() {
+		if (!this.props.picture) {
+			return <Digital size={50} />;
+		}
 		return (
 			<div>
 				<PatientName name={this.props.name} age={this.props.age} occupation={this.props.occupation} picture={this.props.picture}/>

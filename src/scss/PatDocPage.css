@@ -40,7 +40,9 @@
 		transition: all 0.5s ease-in; 
 		text-align: center; 
 } 
- 
+.submitBtn:focus {
+	outline: none;
+}
 .personal-info { 
 		height: 65px; 
 		background-color: #000; 
@@ -132,7 +134,10 @@
 	.registration-form {
 		margin-top: 15%;
 	}
-
+}
+input[name='picture']:focus
+{
+	outline: none;
 }
 
 

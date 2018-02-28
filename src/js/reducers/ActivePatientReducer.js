@@ -33,9 +33,11 @@ export default (state=INIT_STATE, action) => {
 	    case GET_ACTIVE_PATIENT_DATA_SUCCESS: {
 	    	let patientInfo = {};
 
-			// setup Patient Info
-			var patInfo = action.payload.PatientInfo;
-			for(let key in patInfo) {
+				// setup Patient Info
+				// console.log('GET_ACTIVE_PATIENT_DATA_SUCCESS');
+				// console.log(action.payload);
+				var patInfo = action.payload.PatientInfo;
+				for(let key in patInfo) {
 					patientInfo = {
 					name: patInfo[key].name,
 					age: patInfo[key].age,

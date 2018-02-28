@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
+import { Digital } from 'react-activity';
 import { Button, 
 		 Form, 
 		 FormGroup, 
@@ -61,13 +62,16 @@ class DoctorPage extends Component {
 	}
 
 	render() {
+		if (!this.props.picture) {
+			return <Digital size={30} />;
+		}
 		return(
-			<div>
-		        <PatientName name={this.props.name} age={this.props.age} occupation={this.props.occupation}/> 
-		        <PatientMetaData address={this.props.address} phone={this.props.phone} email={this.props.email}/> 
-	        	<Form className="container" onSubmit={this.handleSubmit}> 
+			<div className='container-fluid'>
+					<PatientName name={this.props.name} age={this.props.age} occupation={this.props.occupation} picture={this.props.picture}/> 
+						<PatientMetaData address={this.props.address} phone={this.props.phone} email={this.props.email}/> 
+						<Form className="container" onSubmit={this.handleSubmit}> 
 						<FormGroup className="info-header-wrapper">
-	            			<h3 className="info-header">Prescription</h3> 
+										<h3 className="info-header">Prescription</h3> 
 							<Input type="select" name="selectedMedicine" id="selectedMedicine" onChange={this.onSelectedMedicineChange}>
 								<option value="Levothyroxine">Levothyroxine</option>
 								<option value="ACE Inhibitor">ACE Inhibitor</option>
@@ -76,10 +80,10 @@ class DoctorPage extends Component {
 							</Input>
 						</FormGroup>
 						<FormGroup className="info-header-wrapper">
-	            			<h3 className="info-header">Doctor Comments: </h3> 
+										<h3 className="info-header">Doctor Comments: </h3> 
 							<Input type="textarea" name="doctorComment" id="doctorComment" onChange={this.onDoctorCommentChange} />
 						</FormGroup>
-	         			<Button className="submitBtn"  type="submit">Submit To Pharmacist</Button> 
+								<Button className="submitBtn"  type="submit">Submit To Pharmacist</Button> 
 					</Form>
 				</div>
 		);
@@ -91,12 +95,13 @@ const mapStateToProps = ( state ) => {
 	return {
 		user: state.auth.user,
 		id: state.activePat.id, 
-	    name: state.activePat.name, 
-	    age: state.activePat.age, 
-	    occupation: state.activePat.occupation, 
-	    address: state.activePat.address, 
-	    phone: state.activePat.phone, 
-	    email: state.activePat.email
+		name: state.activePat.name, 
+		age: state.activePat.age, 
+		occupation: state.activePat.occupation, 
+		address: state.activePat.address, 
+		phone: state.activePat.phone, 
+		email: state.activePat.email,
+		picture: state.activePat.picture,
 	}
 }
 

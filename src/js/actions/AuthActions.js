@@ -1,4 +1,7 @@
 import firebase from 'firebase';
+import { push } from 'react-router-redux';
+
+import { store } from '../stores/store';
 
 import { 
 	LOGIN_USER,
@@ -84,21 +87,27 @@ export const RegisterNewUser = ({ email, password, address, name, age, occupatio
 				occupation,
 				phone,
 				pictureName
-			});
+			})
+			.then(() => {
+				// add picture, if picture doesnt add pic, we call on default pic saved in the app
+					if(picture) {
+						//upload user image into firebase storage
+						var storageRef = firebase.storage().ref('users').child(user.uid).child(pictureName);
+						var task = storageRef.put(picture);
 
-			// add picture, if picture doesnt add pic, we call on default pic saved in the app
-			if(picture) {
-				//upload user image into firebase storage
-				var storageRef = firebase.storage().ref('users').child(user.uid).child(pictureName);
-				var task = storageRef.put(picture);
+						//if we want to add image upload progress bar
+						task.on('state_changed', (snapshot) => {
+							var perc = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+							console.log(perc);
+						})
+					}
+					setTimeout(() => {
+						store.dispatch(push('/patient'));
+					}, 3000);
+				}
+			);
 
-				//if we want to add image upload progress bar
-				task.on('state_changed', (snapshot) => {
-					var perc = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-					console.log(perc);
-				});
-			}
-
+			
 		}).catch((error) => {
 			console.log(error);
 			dispatch({
